@@ -508,6 +508,9 @@ body{overflow:auto;background:var(--ink)}
 
 .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 3%;z-index:1;opacity:0;transition:opacity .35s ease}
 .hasp .pimg{opacity:1}
+.pimg.pt{transition:none}
+.pimg.pf:not(.ld){opacity:0!important}
+.pimg.pf{z-index:2}
 .wire .pimg{display:none}
 .tag.soon{background:#2A2E38;color:#F0B73C;border-color:#F0B73C55}
 .hasp svg .fig{display:none}
@@ -1012,8 +1015,12 @@ let PU = 0;
 /* Власні портрети: поклади файл portraits/<id>.webp (або .png/.jpg) поруч з index.html */
 const NOPIC = new Set(); window.__nopic = (id) => NOPIC.add(id);
 const PCH = (id, full) => (full ? [] : [`portraits/t/${id}.webp`]).concat([`portraits/${id}.webp`, `portraits/${id}.png`, `portraits/${id}.jpg`], full ? [`portraits/t/${id}.webp`] : []);
-window.__pn = (im) => { const L = im.dataset.c.split('|'); const k = (+im.dataset.k || 0) + 1; if (k < L.length) { im.dataset.k = k; im.src = L[k]; } else { window.__nopic(im.dataset.id); im.remove(); } };
-const portraitImg = (a, full) => { if (NOPIC.has(a.id)) return ''; const L = PCH(a.id, full); return `<img class="pimg" src="${L[0]}" data-id="${a.id}" data-c="${L.join('|')}" alt="" ${full ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__pn(this)">`; };
+window.__pn = (im) => { const L = im.dataset.c.split('|'); const k = (+im.dataset.k || 0) + 1; if (k < L.length) { im.dataset.k = k; im.src = L[k]; } else { if (!im.dataset.full) window.__nopic(im.dataset.id); im.remove(); } };
+const portraitImg = (a, full) => { if (NOPIC.has(a.id)) return ''; const L = PCH(a.id, full);
+  if (!full) return `<img class="pimg" src="${L[0]}" data-id="${a.id}" data-c="${L.join('|')}" alt="" loading="lazy" decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__pn(this)">`;
+  const T = PCH(a.id, false);
+  return `<img class="pimg pt" src="${T[0]}" data-id="${a.id}" data-c="${T.join('|')}" alt="" decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__pn(this)">` +
+    `<img class="pimg pf" src="${L[0]}" data-id="${a.id}" data-full="1" data-c="${L.join('|')}" alt="" fetchpriority="high" decoding="async" onload="this.classList.add('ld');this.parentNode.classList.add('hasp')" onerror="__pn(this)">`; };
 function poster(a, full) {
   const r = rng(a.id), el = elOf(a), c = el.c, u = 'p' + (++PU);
   const hairKinds = ['bob', 'long', 'spike', 'hood', 'bun'];
