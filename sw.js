@@ -1,5 +1,5 @@
 /* Досьє Ерідо — service worker. Змінюй VERSION, щоб скинути кеш після оновлення. */
-const VERSION = 'eridu-v7';
+const VERSION = 'eridu-v8';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
