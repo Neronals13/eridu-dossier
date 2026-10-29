@@ -1011,7 +1011,7 @@ function rng(seed) { let h = 2166136261; for (const c of String(seed)) { h ^= c.
 let PU = 0;
 /* Власні портрети: поклади файл portraits/<id>.webp (або .png/.jpg) поруч з index.html */
 const NOPIC = new Set(); window.__nopic = (id) => NOPIC.add(id);
-const PCH = (id, full) => (full ? [] : [`portraits/t/${id}.webp`]).concat([`portraits/${id}.webp`, `portraits/${id}.png`, `portraits/${id}.jpg`]);
+const PCH = (id, full) => (full ? [] : [`portraits/t/${id}.webp`]).concat([`portraits/${id}.webp`, `portraits/${id}.png`, `portraits/${id}.jpg`], full ? [`portraits/t/${id}.webp`] : []);
 window.__pn = (im) => { const L = im.dataset.c.split('|'); const k = (+im.dataset.k || 0) + 1; if (k < L.length) { im.dataset.k = k; im.src = L[k]; } else { window.__nopic(im.dataset.id); im.remove(); } };
 const portraitImg = (a, full) => { if (NOPIC.has(a.id)) return ''; const L = PCH(a.id, full); return `<img class="pimg" src="${L[0]}" data-id="${a.id}" data-c="${L.join('|')}" alt="" ${full ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__pn(this)">`; };
 function poster(a, full) {
