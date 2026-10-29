@@ -1,4 +1,4 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0C0D10"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ерідо"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><script>(function(){var d=document.documentElement;function f(){try{if(navigator.standalone){var a=Math.max(screen.width,screen.height),b=Math.min(screen.width,screen.height);d.style.setProperty('--sh',(innerWidth<innerHeight?a:b)+'px');d.classList.add('ios-sa')}}catch(e){}}f();addEventListener('resize',f);addEventListener('orientationchange',f)})()</script><title>Досьє Ерідо</title>
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0C0D10"><meta name="description" content="Неофіційний фан-гайд по Zenless Zone Zero: 62 агенти, гайди, W-Engine, диски драйву, лор і трекер колекції."><meta property="og:type" content="website"><meta property="og:title" content="Досьє Ерідо — гайд по Zenless Zone Zero"><meta property="og:description" content="62 агенти, гайди, спорядження, лор і трекер колекції. Неофіційний фан-проєкт."><meta property="og:image" content="https://neronals13.github.io/eridu-dossier/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ерідо"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><script>(function(){var d=document.documentElement;function f(){try{if(navigator.standalone){var a=Math.max(screen.width,screen.height),b=Math.min(screen.width,screen.height);d.style.setProperty('--sh',(innerWidth<innerHeight?a:b)+'px');d.classList.add('ios-sa')}}catch(e){}}f();addEventListener('resize',f);addEventListener('orientationchange',f)})()</script><title>Досьє Ерідо</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap">
 <style>/* Concept: pocket dossier from a retro-futurist TV city. Black glass, acid-yellow stamps, hazard tape, halftone, chamfered tags. One bold move: the CRT power-on + glitch titles. */
 :root{
@@ -887,6 +887,39 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 .device.flicker::before{animation:none!important;display:none!important}
 .wp svg .fig,.wp svg .dec{display:none}
 .pimg{transition:opacity .22s ease}
+
+/* ===== visual polish v10 ===== */
+:root{--muted:#A8AFBF;--dim:#8A91A2;--soft:#D3D6DF}
+/* 1. картки агентів: читабельний підпис + колір атрибута */
+.acard .shade{background:linear-gradient(180deg,transparent 34%,rgba(12,13,16,.5) 58%,rgba(12,13,16,.96) 100%)}
+.acard .nm{text-shadow:0 2px 12px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.6)}
+.acard .fc{font-size:11px;color:var(--soft);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.acard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--ec,transparent);z-index:3;opacity:.9}
+.acard{box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);transition:transform .22s cubic-bezier(.3,1.3,.4,1),translate .22s cubic-bezier(.3,1.3,.4,1),box-shadow .25s}
+@media (hover:hover){
+  .acard:hover{translate:0 -4px;box-shadow:0 14px 30px -10px color-mix(in srgb,var(--ec,#DFFF2E) 60%,transparent),0 0 0 1px color-mix(in srgb,var(--ec,#DFFF2E) 70%,transparent)}
+  .acard:hover .pimg{transform:scale(1.04)}
+  .gcard:hover,.card:hover{border-color:var(--line2)}
+  .pbtn:hover,.chip:hover{filter:brightness(1.12)}
+}
+.pimg{transition:opacity .22s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.acard:active{transform:scale(.96)}
+/* 2. скелетон: м'який блиск, поки вантажиться портрет */
+.poster.wp:not(.hasp)::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.12) 50%,transparent 70%);transform:translateX(-100%);animation:shim 1.3s ease-in-out infinite;pointer-events:none}
+/* 3. іконки спорядження: фон і світіння в кольорі набору */
+.gic{background:radial-gradient(circle at 50% 38%,hsl(var(--h) 45% 26%),hsl(var(--h) 32% 10%))}
+.gic.hasp{box-shadow:0 0 16px -5px hsl(var(--h) 75% 55%/.65)}
+.gic.hasp img{filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+/* 4. мікроанімації */
+.acard .fav:active svg{transform:scale(.8)}
+.acard .fav svg{transition:transform .18s cubic-bezier(.3,1.6,.5,1),fill .2s,stroke .2s}
+.heart.pop{animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+html{scroll-behavior:smooth}
+/* 7. порожні стани */
+.empty{margin:14px 20px;border:1px dashed var(--line2);border-radius:18px;background:radial-gradient(circle at 50% 0%,rgba(223,255,46,.07),transparent 65%);padding:36px 24px}
+.empty b{letter-spacing:.02em}
+.empty span{max-width:30ch;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.poster.wp:not(.hasp)::after{animation:none}.acard,.pimg{transition:none}}
 </style>
 </head><body><div class="stage" id="stage">
 <aside class="rail" id="railL"></aside>
@@ -1432,7 +1465,7 @@ function deepSkills(a) {
 }
 
 /* ===== SCREENS A: onboarding, home, agents, agent detail ===== */
-const acard = (a, i = 0, extra = '') => `<button class="acard rise" style="--i:${i};${extra}" data-agent="${a.id}">${posterBox(a)}<div class="shade"></div><span class="tag rar ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}</span><span class="fav" data-fav="${a.id}" role="button" aria-label="В улюблені">${ico('heart', 'heart' + (S.favs.includes(a.id) ? ' on' : ''))}</span>${S.own[a.id] ? `<span class="ownb" title="Є в мене" aria-label="Є в мене">${ico('check')}</span>` : ''}<div class="meta"><div class="nm">${esc(a.name_ua)}</div><div class="fc">${esc(elOf(a).ua)} · ${esc(specUa(a))}${a.released === false ? ' · скоро' : ''}</div></div></button>`;
+const acard = (a, i = 0, extra = '') => `<button class="acard rise" style="--i:${i};--ec:${elOf(a).c};${extra}" data-agent="${a.id}">${posterBox(a)}<div class="shade"></div><span class="tag rar ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}</span><span class="fav" data-fav="${a.id}" role="button" aria-label="В улюблені">${ico('heart', 'heart' + (S.favs.includes(a.id) ? ' on' : ''))}</span>${S.own[a.id] ? `<span class="ownb" title="Є в мене" aria-label="Є в мене">${ico('check')}</span>` : ''}<div class="meta"><div class="nm">${esc(a.name_ua)}</div><div class="fc">${esc(elOf(a).ua)} · ${esc(specUa(a))}${a.released === false ? ' · скоро' : ''}</div></div></button>`;
 
 function bindAgentCards(root) {
   on(root, 'click', '[data-fav]', (e, t) => {
