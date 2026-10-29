@@ -662,6 +662,188 @@ button.relrow:active{transform:scale(.97)}
 @media (prefers-reduced-motion:reduce){.emap .mp,.emap .mp .halo{transition:none}}
 .art-hero .eyebrow{white-space:normal;line-height:1.5;max-width:calc(100% - 80px)}
 .emap .mp .lk{font-size:9px}
+
+/* ===== COMPANION ("Моє"), forms, desktop ===== */
+:root{--dim:#7F8799}
+.mypad{padding:0 20px}
+.mp{padding-top:14px}
+.mypad .agrid.flush,.agrid.flush{padding:0}
+.hscroll.flush{padding-left:0;padding-right:0}
+.mini3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 20px}
+.card.mini{display:grid;gap:2px;justify-items:start;text-align:left;padding:12px 12px 10px;min-height:88px;transition:transform .16s,border-color .2s}
+.card.mini:active{transform:scale(.97)}
+.card.mini:hover{border-color:var(--acid)}
+.card.mini b{font:700 30px/1 var(--f-display)}
+.card.mini span{font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.card.mini small{font-size:11.5px;color:var(--muted)}
+.ownb{position:absolute;top:8px;right:8px;z-index:3;width:24px;height:24px;border-radius:50%;background:var(--acid);color:var(--acidink);display:grid;place-items:center}
+.acard .fav ~ .ownb{top:44px;right:11px}
+.ownb svg{width:15px;height:15px;stroke-width:3}
+.ocard .fc{color:var(--soft)}
+.ocard.no .poster{filter:grayscale(1) brightness(.6)}
+.ocard.no{opacity:.82}
+.sqcard{padding:14px}
+.mslot{flex:1;position:relative;aspect-ratio:3/4;border:1.5px dashed var(--line2);border-radius:12px;display:grid;place-items:center;align-content:center;gap:4px;overflow:hidden;background:var(--ink3);color:var(--muted);min-height:88px}
+.mslot.fill{border-style:solid;align-content:end;place-items:end start}
+.mslot .pic{position:absolute;inset:0}
+.mslot .pic svg{width:100%;height:100%}
+.mslot.fill::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,13,16,.94))}
+.mslot b{position:relative;z-index:2;padding:0 8px 8px;font:700 14px/1 var(--f-display);text-transform:uppercase;color:var(--paper)}
+.mslot svg.ico{width:22px;height:22px}
+.mslot small{font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
+.pic.big{width:64px;height:84px;border-radius:12px;overflow:hidden;flex:none;position:relative;display:block}
+.pic.big svg{width:100%;height:100%}
+/* forms */
+.fld{display:grid;gap:7px;margin-bottom:16px}
+.fld>label{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fld>label b{color:var(--paper)}
+.inp{width:100%;min-height:48px;padding:11px 14px;background:var(--ink);border:1px solid var(--line2);border-radius:12px;color:var(--paper);font-size:16px;font-family:var(--f-body);transition:border-color .2s,box-shadow .2s;color-scheme:dark}
+textarea.inp{resize:vertical;min-height:90px;font:500 13px/1.4 var(--f-mono)}
+.inp:focus{outline:0;border-color:var(--acid);box-shadow:0 0 0 4px rgba(223,255,46,.12)}
+.inp.bad{border-color:var(--bad);box-shadow:0 0 0 4px rgba(255,90,90,.12)}
+select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.err{min-height:0;font-size:13px;color:var(--bad);line-height:1.4}
+.err:empty{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips .chip{min-height:40px}
+.chip.due{pointer-events:none;border-color:var(--line2)}
+.due.soon{color:var(--amber)}
+.due.over{color:var(--bad)}
+.chip.due.soon,.chip.due.over{border-color:currentColor}
+.lnk{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px;font:600 12px var(--f-mono);letter-spacing:.04em;color:var(--soft)}
+.lnk svg{width:16px;height:16px}
+.lnk:hover{color:var(--acid)}
+.okbox{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--good);border-radius:12px;background:rgba(91,227,139,.08);color:var(--soft);margin-bottom:14px;font-size:14px}
+.okbox svg{width:22px;height:22px;stroke:var(--good);flex:none}
+.okbox b{color:var(--paper)}
+/* goals */
+.glist{display:grid;gap:10px;padding-top:12px}
+.card.goal{display:grid;grid-template-columns:52px 1fr 20px;gap:12px;align-items:center;padding:12px 14px 12px 12px;text-align:left;width:100%;transition:border-color .2s,transform .16s}
+.card.goal:hover{border-color:var(--line2)}
+.card.goal:active{transform:scale(.985)}
+.card.goal.fin{opacity:.78}
+.gav{width:52px;height:64px;border-radius:10px;overflow:hidden;background:var(--ink3);display:grid;place-items:center;position:relative;color:var(--acid)}
+.gav svg{width:100%;height:100%}
+.gav svg.ico{width:24px;height:24px}
+.gtx{display:grid;gap:5px;min-width:0}
+.gtx b{font:700 18px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gtx small{font-size:12.5px;color:var(--muted)}
+.gtx .meter{height:8px}
+.card.goal>svg{width:18px;height:18px;color:var(--muted)}
+.stl{display:grid;gap:8px}
+.stp{display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 12px;border:1px solid var(--line2);border-radius:12px;background:var(--ink);text-align:left;font-size:15px;transition:border-color .2s,background .2s}
+.stp .cb{width:24px;height:24px;border:2px solid var(--line2);border-radius:7px;display:grid;place-items:center;flex:none;transition:.2s}
+.stp .cb svg{width:15px;height:15px;stroke-width:3.2;stroke:var(--acidink)}
+.stp.on{border-color:var(--acid2);color:var(--muted)}
+.stp.on .cb{background:var(--acid);border-color:var(--acid)}
+.stp.on span:last-child{text-decoration:line-through}
+.toast.act{pointer-events:auto}
+.tact{margin-left:6px;padding:6px 10px;min-height:32px;border-radius:8px;background:var(--ink);color:var(--paper);font:700 12px var(--f-mono);letter-spacing:.04em;text-transform:uppercase}
+/* tracker */
+.segh{margin-bottom:12px}
+.gauge{padding:16px 16px 14px}
+.gv{display:flex;align-items:baseline;gap:4px}
+.gv b{font:700 64px/1 var(--f-display)}
+.gv span{font:600 22px var(--f-display);color:var(--muted)}
+.gbar{position:relative;height:14px;margin:18px 0 26px;background:var(--ink3);border-radius:7px}
+.gbar i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:repeating-linear-gradient(-45deg,var(--acid) 0 8px,var(--acid2) 8px 16px);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.gbar u{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--amber);text-decoration:none}
+.gbar u.end{background:var(--hot);margin-left:-2px}
+.gbar u em{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;font:600 11px var(--f-mono);font-style:normal;color:var(--soft)}
+.gbar u.end em{transform:translateX(-85%)}
+.gnote{font-size:14px;color:var(--soft);line-height:1.5}
+.gnote b{color:var(--paper)}
+.card.calc{padding:16px;margin-top:12px}
+.cres{margin-top:12px;display:grid;gap:6px}
+.cres p{margin:0;font-size:14px;line-height:1.5;color:var(--soft)}
+.cres p.good{color:var(--good)}
+.cres b{color:var(--paper)}
+.cres p.good b{color:var(--good)}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.stats3 .card{padding:12px 6px;text-align:center}
+.stats3 b{display:block;font:700 26px var(--f-display)}
+.stats3 small{font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.hrow .hk{width:44px;height:36px;display:grid;place-items:center;border-radius:8px;font:700 15px var(--f-display);background:var(--ink3);color:var(--soft)}
+.hrow.s .hk{background:var(--acid);color:var(--acidink)}
+.hrow .ht{display:grid;min-width:0}
+.hrow .ht b{font-weight:600;font-size:15px}
+.hrow .ht small{color:var(--muted);font-size:12.5px}
+/* more */
+.mrows{display:grid;gap:10px;padding-top:6px}
+.card.mrow{display:flex;align-items:center;gap:14px;padding:14px;text-align:left;width:100%;min-height:68px;transition:border-color .2s}
+.card.mrow:hover{border-color:var(--acid)}
+.mrow .mic{width:44px;height:44px;border-radius:12px;background:var(--ink3);display:grid;place-items:center;color:var(--acid);flex:none}
+.mrow .tx{flex:1;min-width:0;display:grid}
+.mrow .tx b{font-weight:600;font-size:16px}
+.mrow .tx small{color:var(--muted);font-size:13px}
+.mrow>svg{width:18px;height:18px;color:var(--muted)}
+/* touch target audit */
+.hscroll .chip,.seg button,.chips .chip{min-height:40px}
+.chip{min-height:40px}
+.icon-btn[data-d]{width:44px;font:700 13px var(--f-mono)}
+@keyframes inPanel{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.v-in-panel{animation:inPanel .35s cubic-bezier(.2,.8,.2,1) both}
+.search,.sw{min-height:44px}
+.sw{height:32px}
+
+/* ===== DESKTOP (>=1024): sidebar, centred content, list + detail panel ===== */
+@media (min-width:1024px){
+  html:not(.mock) body{overflow:hidden}
+  html:not(.mock) .stage{display:block;position:fixed;inset:0;height:auto;padding:0;background:var(--ink)}
+  html:not(.mock) .rail{display:none}
+  html:not(.mock) .device{position:absolute;inset:0;width:auto;height:auto;border-radius:0;box-shadow:none;--side:240px}
+  html:not(.mock) .statusbar{display:none}
+  html:not(.mock) .view{padding-top:0}
+  html:not(.mock) .views{left:var(--side)}
+  html:not(.mock) .tabbar{left:0;top:0;bottom:0;right:auto;width:var(--side);height:auto;border-radius:0;border:0;border-right:1px solid var(--line);grid-template-columns:1fr;grid-auto-rows:56px;align-content:start;padding:96px 12px 12px;background:var(--ink2);backdrop-filter:none;transform:none!important}
+  html:not(.mock) .tabbar::before{content:"Досьє Ерідо";position:absolute;top:30px;left:24px;font:700 26px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;color:var(--paper)}
+  html:not(.mock) .tabbar::after{content:"/ пошук · Esc назад";position:absolute;left:24px;bottom:20px;font:500 11px var(--f-mono);color:var(--dim);letter-spacing:.04em}
+  html:not(.mock) .tabbar .t{grid-auto-flow:column;justify-content:start;justify-items:start;align-items:center;gap:14px;padding:0 18px;font-size:12px;border-radius:14px}
+  html:not(.mock) .tabbar .t:hover:not(.on){color:var(--paper);background:var(--ink3)}
+  html:not(.mock) .tabbar .pill{left:12px;right:12px;width:auto;top:96px;bottom:auto;height:56px;transform:translateY(calc(var(--i,0) * 56px))}
+  html:not(.mock) .view.has-tabs{padding-bottom:40px}
+  html:not(.mock) .view>*:not(.cta-bar){max-width:1040px;margin-left:auto;margin-right:auto}
+  html:not(.mock) .view>.topbar{max-width:none;padding-left:max(20px,calc((100% - 1040px)/2 + 20px));padding-right:max(20px,calc((100% - 1040px)/2 + 20px))}
+  html:not(.mock) .view.has-cta>*:not(.cta-bar){width:100%}
+  html:not(.mock) .view.as-panel>*:not(.cta-bar){max-width:none;margin-left:0;margin-right:0}
+  html:not(.mock) .view.as-panel{left:auto;right:0;width:min(560px,46%);z-index:30;border-left:1px solid var(--line2);box-shadow:-24px 0 60px -12px rgba(0,0,0,.7)}
+  html:not(.mock) .views.panel-open .view:not(.as-panel){right:min(560px,46%)}
+  html:not(.mock) .view.as-panel .dhero{height:340px}
+  html:not(.mock) .agrid{grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}
+  html:not(.mock) .tile-grid{grid-template-columns:repeat(4,1fr)}
+  html:not(.mock) .mini3{grid-template-columns:repeat(3,1fr)}
+  html:not(.mock) .sheet{left:var(--side);right:0;margin-inline:auto;width:min(560px,100%);max-height:86%;border-radius:26px 26px 0 0}
+  html:not(.mock) .toast{bottom:28px;left:calc(50% + var(--side)/2)}
+  html:not(.mock) .ovl{padding-top:0;left:var(--side)}
+  html:not(.mock) .ovl>*{max-width:720px;width:100%;margin-inline:auto}
+  html:not(.mock) .scrim{left:0}
+  html:not(.mock) .hscroll{flex-wrap:wrap;overflow:visible}
+  html:not(.mock) .hero-card{max-width:760px}
+  html:not(.mock) .mypad{max-width:880px}
+  html:not(.mock) .mp{display:block}
+  html:not(.mock) .glist{grid-template-columns:repeat(2,1fr)}
+  html:not(.mock) .disc{max-width:1040px}
+  html:not(.mock) .crt{display:none}
+  html:not(.mock) .view.has-cta>.cta-bar{position:sticky}
+}
+@media (min-width:1024px) and (hover:hover){
+  html:not(.mock) .acard:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(0,0,0,.8)}
+  html:not(.mock) .card.goal:hover,html:not(.mock) .card.mrow:hover{border-color:var(--acid)}
+}
+.tabbar .pill{transform:translateX(calc(var(--i,0) * 100%))}
+@media (min-width:1024px){html:not(.mock) .mslot{aspect-ratio:auto;height:150px}}
+.gstat{margin:-8px 0 10px}
+.gstat .chip{white-space:normal;line-height:1.3;height:auto;padding:8px 13px}
+.btn.tight{padding:0 14px;letter-spacing:.04em;gap:8px}
+.btn.sm{min-height:44px}
+/* 44px touch targets */
+.chip,.hscroll .chip,.chips .chip{min-height:44px}
+.seg button{min-height:44px}
+.acard .fav{width:44px;height:44px;top:2px;right:2px}
+.acard .fav ~ .ownb{top:46px;right:11px}
+.sec-h button{min-height:44px;padding:0 2px;display:inline-flex;align-items:center}
+.search input{align-self:stretch}
 </style>
 </head><body><div class="stage" id="stage">
 <aside class="rail" id="railL"></aside>
@@ -693,7 +875,7 @@ const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const KEY = 'eridu:v1';
 const S0 = () => ({
   user: { name: '', level: 'new', fav: 'Electric', done: false },
-  xp: 0, favs: [], squad: [null, null, null], lessons: {}, seen: {}, tabs: {}, beats: {},
+  xp: 0, favs: [], squad: [null, null, null], own: {}, goals: [], pulls: [], lessons: {}, seen: {}, tabs: {}, beats: {},
   quiz: { best: 0, plays: 0, last: 0 }, badges: {}, streak: { last: '', n: 0 },
   opts: { sound: true, vib: true, crt: true, reduce: false },
 });
@@ -762,6 +944,14 @@ const IC = {
   motion: '<path d="M4 12h6M4 7h10M4 17h8"/><path d="M16 9l5 3-5 3z"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
   reset: '<path d="M4 4v6h6"/><path d="M5.5 14a7.5 7.5 0 101.8-7.8L4 10"/>',
+  flag: '<path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/>',
+  my: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13v7M13 16.5h7"/>',
+  more: '<circle cx="5" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="19" cy="12" r="1.7" fill="currentColor"/>',
+  download: '<path d="M12 3v12M7 11l5 5 5-5M4 21h16"/>',
+  upload: '<path d="M12 21V9M7 13l5-5 5 5M4 3h16"/>',
+  trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/>',
+  copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 00-1-1H5a1 1 0 00-1 1v10a1 1 0 001 1h3"/>',
+  undo: '<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/>',
   /* world */
   city: '<path d="M3 21V9l5-3v15M8 21V4l6 3v14M14 21V11l7 2v8M2 21h20M11 10h0M11 14h0"/>',
   crack: '<path d="M3 3l7 6-3 3 6 3-2 3 7 3"/><path d="M13 3l-2 5M19 9l-4 1"/>',
@@ -964,7 +1154,10 @@ function linkTerms(text, max = 5) {
 const V = () => $('#views');
 const stack = [];
 let busy = false;
-const TABS = [['home', 'Головна', 'home'], ['agents', 'Агенти', 'agents'], ['universe', 'Всесвіт', 'globe'], ['academy', 'Академія', 'book'], ['profile', 'Профіль', 'user']];
+const TABS = [['home', 'Головна', 'home'], ['agents', 'Агенти', 'agents'], ['my', 'Моє', 'my'], ['universe', 'Всесвіт', 'globe'], ['more', 'Ще', 'more']];
+const TABOF = { academy: 'more', profile: 'more' };
+const isDesktop = () => !document.documentElement.classList.contains('mock') && window.matchMedia('(min-width:1024px)').matches;
+const syncPanel = () => { const t = stack[stack.length - 1]; const v = V(); if (v) v.classList.toggle('panel-open', !!(t && t.el.classList.contains('as-panel'))); };
 const SCREENS = {};
 const on = (root, ev, sel, fn) => root.addEventListener(ev, (e) => { const t = e.target.closest(sel); if (t && root.contains(t)) fn(e, t); });
 const onScroll = (el, fn) => { let q = false; el.addEventListener('scroll', () => { if (q) return; q = true; requestAnimationFrame(() => { q = false; fn(el.scrollTop); }); }, { passive: true }); };
@@ -975,16 +1168,16 @@ function setHash(h) { try { if (location.hash !== '#' + h) history.replaceState(
 function updateTabbar(name, show) {
   const tb = $('#tabbar'); if (!tb) return;
   tb.classList.toggle('hide', !show);
-  const i = TABS.findIndex((t) => t[0] === name);
+  const i = TABS.findIndex((t) => t[0] === (TABOF[name] || name));
   if (i >= 0) {
-    $('.pill', tb).style.transform = `translateX(${i * 100}%)`;
+    tb.style.setProperty('--i', i);
     $$('.t', tb).forEach((b, k) => b.classList.toggle('on', k === i));
   }
 }
 
 function mount(name, p) {
   const def = SCREENS[name]; const el = document.createElement('div');
-  el.className = 'view' + (def.tabs ? ' has-tabs' : '') + (def.cta ? ' has-cta' : ''); el.dataset.screen = name;
+  el.className = 'view' + (def.tabs ? ' has-tabs' : '') + (def.cta ? ' has-cta' : '') + (def.panel && isDesktop() ? ' as-panel' : ''); el.dataset.screen = name;
   const inst = { name, p: p || {}, el, def };
   def.render(el, inst.p, inst);
   return inst;
@@ -999,8 +1192,10 @@ function finishAnim(el, cls, cb) {
 
 /* root: switch whole stack (tabs); push: forward; replace: swap top; */
 function go(name, p = {}, opt = {}) {
-  if (busy && !STATIC) return; const dir = opt.dir || (SCREENS[name].tabs ? 'root' : 'fwd');
+  if (busy && !STATIC) return; let dir = opt.dir || (SCREENS[name].tabs ? 'root' : 'fwd');
   const cur = stack[stack.length - 1]; const inst = mount(name, p); const host = V(); busy = true;
+  const panelNew = inst.el.classList.contains('as-panel');
+  if (panelNew && cur && cur.el.classList.contains('as-panel') && dir === 'fwd') dir = 'replace';
   const done = () => { busy = false; };
   if (dir === 'root' || !cur) {
     const olds = stack.splice(0, stack.length); host.appendChild(inst.el); stack.push(inst);
@@ -1016,13 +1211,15 @@ function go(name, p = {}, opt = {}) {
     host.appendChild(inst.el); stack.push(inst); inst.el.style.opacity = 0;
     requestAnimationFrame(() => { inst.el.style.transition = 'opacity .35s'; inst.el.style.opacity = 1; });
     setTimeout(() => { cur.el.style.display = 'none'; inst.el.style.transition = ''; done(); }, STATIC ? 0 : 420);
+  } else if (panelNew) { /* desktop side panel: list stays visible */
+    host.appendChild(inst.el); stack.push(inst); finishAnim(inst.el, 'v-in-panel', done);
   } else { /* fwd */
     host.appendChild(inst.el); stack.push(inst);
     finishAnim(cur.el, 'v-out-fwd', () => { cur.el.style.display = 'none'; cur.el.classList.remove('v-out-fwd'); });
     finishAnim(inst.el, 'v-in-fwd', done);
   }
   const showTabs = !!SCREENS[name].tabs;
-  updateTabbar(name, showTabs);
+  updateTabbar(name, showTabs); syncPanel();
   if (SCREENS[name].tabs) { S.tabs[name] = 1; if (Object.keys(S.tabs).length >= 5) award('trav'); save(); }
   if (SCREENS[name].hash) setHash(SCREENS[name].hash(inst.p)); else if (SCREENS[name].tabs) setHash(name);
   return inst;
@@ -1033,7 +1230,7 @@ function back() {
   prev.el.style.display = ''; prev.el.classList.remove('v-out-fwd', 'v-in-fwd', 'v-in-up');
   finishAnim(cur.el, cur.name === 'lesson' || cur.name === 'quiz' ? 'v-out-fade' : 'v-out-back', () => { cur.el.remove(); busy = false; });
   if (cur.name !== 'lesson' && cur.name !== 'quiz') finishAnim(prev.el, 'v-in-back');
-  updateTabbar(prev.name, !!prev.def.tabs);
+  updateTabbar(prev.name, !!prev.def.tabs); syncPanel();
   if (prev.def.hash) setHash(prev.def.hash(prev.p)); else if (prev.def.tabs) setHash(prev.name);
   sfx.nav();
 }
@@ -1065,7 +1262,7 @@ function toggleFav(id, ev) {
 function openAgent(id, fromEl) {
   S.seen[id] = 1; save(); if (Object.keys(S.seen).length >= 1) award('first'); if (Object.keys(S.seen).length >= 8) award('collector');
   const posterEl = fromEl && $('.poster', fromEl);
-  if (!posterEl || STATIC || S.opts.reduce) { go('agent', { id }); return; }
+  if (!posterEl || STATIC || S.opts.reduce || isDesktop()) { go('agent', { id }); return; }
   const dev = $('#device').getBoundingClientRect(), r = posterEl.getBoundingClientRect();
   const clone = posterEl.cloneNode(true);
   clone.style.cssText = `position:absolute;z-index:72;left:${r.left - dev.left}px;top:${r.top - dev.top}px;width:${r.width}px;height:${r.height}px;border-radius:14px;overflow:hidden;transition:all .5s cubic-bezier(.2,.85,.2,1);pointer-events:none;inset:auto;`;
@@ -1186,7 +1383,7 @@ function deepSkills(a) {
 }
 
 /* ===== SCREENS A: onboarding, home, agents, agent detail ===== */
-const acard = (a, i = 0, extra = '') => `<button class="acard rise" style="--i:${i};${extra}" data-agent="${a.id}">${posterBox(a)}<div class="shade"></div><span class="tag rar ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}</span><span class="fav" data-fav="${a.id}" role="button" aria-label="В улюблені">${ico('heart', 'heart' + (S.favs.includes(a.id) ? ' on' : ''))}</span><div class="meta"><div class="nm">${esc(a.name_ua)}</div><div class="fc">${esc(elOf(a).ua)} · ${esc(specUa(a))}${a.released === false ? ' · скоро' : ''}</div></div></button>`;
+const acard = (a, i = 0, extra = '') => `<button class="acard rise" style="--i:${i};${extra}" data-agent="${a.id}">${posterBox(a)}<div class="shade"></div><span class="tag rar ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}</span><span class="fav" data-fav="${a.id}" role="button" aria-label="В улюблені">${ico('heart', 'heart' + (S.favs.includes(a.id) ? ' on' : ''))}</span>${S.own[a.id] ? `<span class="ownb" title="Є в мене" aria-label="Є в мене">${ico('check')}</span>` : ''}<div class="meta"><div class="nm">${esc(a.name_ua)}</div><div class="fc">${esc(elOf(a).ua)} · ${esc(specUa(a))}${a.released === false ? ' · скоро' : ''}</div></div></button>`;
 
 function bindAgentCards(root) {
   on(root, 'click', '[data-fav]', (e, t) => {
@@ -1247,6 +1444,8 @@ SCREENS.home = {
     <div class="tile-grid">
       ${[['universe', 'globe', 'Всесвіт', `${D.world.length} статей про місто й світ`, '01'], ['timeline', 'clock', 'Хроніка', `${D.timeline.length} подій сюжету`, '02'], ['academy', 'book', 'Академія', `${total} уроків і вікторина`, '03'], ['squad', 'squad', 'Склад', 'Збери команду з трьох', '04']].map((t, i) => `<button class="tile rise" style="--i:${i + 3}" data-t="${t[0]}"><span class="big">${t[4]}</span>${ico(t[1])}<span><span class="tt">${t[2]}</span><small>${t[3]}</small></span></button>`).join('')}
     </div>
+    <div class="sec-h rise" style="--i:7"><div class="h-disp">Моє</div><button id="myall">Відкрити</button></div>
+    <div class="mini3 rise" style="--i:7">${myHomeCards()}</div>
     <div class="sec-h rise" style="--i:7"><div class="h-disp">Твій прогрес</div></div>
     <div class="card rise" style="--i:8;margin:0 20px;padding:16px;display:flex;gap:16px;align-items:center">
       <div class="ring"><svg viewBox="0 0 78 78"><circle class="bg" cx="39" cy="39" r="33"/><circle class="fg" cx="39" cy="39" r="33" stroke-dasharray="207.3" stroke-dashoffset="207.3" data-dash="${207.3 * (1 - pct / 100)}"/></svg><div class="val"><span data-count="${pct}" data-suffix="%">0%</span></div></div>
@@ -1258,6 +1457,8 @@ SCREENS.home = {
     <div class="sec-h"><div class="h-disp">Агенти</div><button id="all">Усі ${AG.length}</button></div>
     <div class="hscroll" id="hs2">${AG.slice(0, 8).map((a, i) => acard(a, i, 'width:150px')).join('')}</div>
     <div class="disc">Неофіційний фанатський навчальний проєкт, створений для курсу UI/UX. Не пов'язаний з HoYoverse. Усі назви та персонажі належать їхнім власникам; ілюстрації в застосунку — оригінальні абстрактні постери, а не офіційний арт. Ukr-терміни неофіційні.</div>`;
+    on($('.mini3', el), 'click', '[data-my]', (e, c) => { S._my = +c.dataset.my; go('my', {}, { dir: 'root' }); });
+    $('#myall', el).onclick = () => go('my', {}, { dir: 'root' });
     $('#hs', el).onclick = () => openSearch();
     $('#hero', el).onclick = () => openAgent(ag.id, $('#hero', el));
     $('#tlb', el).onclick = () => { S._tier = 1; go('agents', {}, { dir: 'root' }); };
@@ -1277,11 +1478,11 @@ SCREENS.home = {
 SCREENS.agents = {
   tabs: true,
   render(el) {
-    const f = { q: '', el: 'all', sp: 'all', r: 'all' };
+    const f = { q: '', el: 'all', sp: 'all', r: 'all', own: false };
     el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Досьє · ${AG.length} Агентів</div><div class="h-disp" style="margin-top:6px">Агенти</div></div><button class="icon-btn" id="sq" aria-label="Склад">${ico('squad')}</button></div>
     <div style="padding:0 20px 12px" id="mode"></div><div id="cat">
     <div style="padding:2px 20px 12px"><label class="search">${ico('search')}<input id="q" placeholder="Імʼя, фракція, роль…" autocomplete="off"><button id="qx" aria-label="Очистити" style="display:none">${ico('close')}</button></label></div>
-    <div class="hscroll" id="fe"><button class="chip on" data-e="all">Усі</button>${Object.entries(EL).map(([k, v]) => `<button class="chip" data-e="${k}"><svg class="ico" viewBox="0 0 24 24" style="stroke:${v.c}">${v.g}</svg>${v.ua}</button>`).join('')}</div>
+    <div class="hscroll" id="fe"><button class="chip on" data-e="all">Усі</button><button class="chip" id="fown" aria-pressed="false">${ico('check')}Мої</button>${Object.entries(EL).map(([k, v]) => `<button class="chip" data-e="${k}"><svg class="ico" viewBox="0 0 24 24" style="stroke:${v.c}">${v.g}</svg>${v.ua}</button>`).join('')}</div>
     <div class="hscroll" id="fs" style="padding-top:8px"><button class="chip on" data-s="all">Усі ролі</button>${Object.entries(SPEC).map(([k, v]) => `<button class="chip" data-s="${k}">${v[0]}</button>`).join('')}</div>
     <div class="hscroll" id="fr" style="padding-top:8px"><button class="chip on" data-r="all">Усі ранги</button><button class="chip" data-r="S">S-ранг</button><button class="chip" data-r="A">A-ранг</button></div>
     <div class="mono muted" id="cnt" style="padding:14px 20px 8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase"></div>
@@ -1297,14 +1498,15 @@ SCREENS.agents = {
     if (startTier) showMode(1);
     const draw = () => {
       const q = f.q.toLowerCase();
-      const L = AG.filter((a) => (f.el === 'all' || elKey(a) === f.el) && (f.sp === 'all' || a.specialty === f.sp) && (f.r === 'all' || a.rarity === f.r) && (!q || [a.name_ua, a.name_en, a.faction_ua, a.role_ua, a.tagline_ua].join(' ').toLowerCase().includes(q)));
+      const L = AG.filter((a) => (f.el === 'all' || elKey(a) === f.el) && (f.sp === 'all' || a.specialty === f.sp) && (f.r === 'all' || a.rarity === f.r) && (!f.own || S.own[a.id]) && (!q || [a.name_ua, a.name_en, a.faction_ua, a.role_ua, a.tagline_ua].join(' ').toLowerCase().includes(q)));
       $('#cnt', el).textContent = `Знайдено: ${L.length}`;
-      grid.innerHTML = L.length ? `<div class="agrid">${L.map((a, i) => acard(a, Math.min(i, 8))).join('')}</div>` : emptyState('Нікого не знайдено', 'Спробуй інший фільтр або запит');
+      grid.innerHTML = L.length ? `<div class="agrid">${L.map((a, i) => acard(a, Math.min(i, 8))).join('')}</div>` : (f.own && !ownCount() ? emptyState('Склад порожній', 'Познач агентів, які в тебе є, у розділі «Моє»') : emptyState('Нікого не знайдено', 'Спробуй інший фільтр або запит'));
     };
     draw(); bindAgentCards(grid);
     const q = $('#q', el); q.oninput = () => { f.q = q.value; $('#qx', el).style.display = q.value ? '' : 'none'; draw(); };
     $('#qx', el).onclick = () => { q.value = ''; f.q = ''; $('#qx', el).style.display = 'none'; draw(); q.focus(); };
-    on($('#fe', el), 'click', '.chip', (e, c) => { f.el = c.dataset.e; $$('#fe .chip', el).forEach((x) => x.classList.toggle('on', x === c)); draw(); });
+    $('#fown', el).onclick = (e) => { f.own = !f.own; e.currentTarget.classList.toggle('on', f.own); e.currentTarget.setAttribute('aria-pressed', f.own); draw(); };
+    on($('#fe', el), 'click', '.chip[data-e]', (e, c) => { f.el = c.dataset.e; $$('#fe .chip[data-e]', el).forEach((x) => x.classList.toggle('on', x === c)); draw(); });
     on($('#fs', el), 'click', '.chip', (e, c) => { f.sp = c.dataset.s; $$('#fs .chip', el).forEach((x) => x.classList.toggle('on', x === c)); draw(); });
     on($('#fr', el), 'click', '.chip', (e, c) => { f.r = c.dataset.r; $$('#fr .chip', el).forEach((x) => x.classList.toggle('on', x === c)); draw(); });
     $('#sq', el).onclick = () => go('squad');
@@ -1321,17 +1523,17 @@ function mateRows(text, self) {
   return found.slice(0, 4);
 }
 SCREENS.agent = {
-  tabs: false, cta: true,
+  tabs: false, cta: true, panel: true,
   hash: (p) => 'agent-' + p.id,
   render(el, p, inst) {
     const a = agent(p.id) || AG[0], c = elOf(a).c, idx = AG.indexOf(a); let tab = p.tab || 0;
-    const fav = S.favs.includes(a.id), inSq = S.squad.includes(a.id);
+    const fav = S.favs.includes(a.id), own = !!S.own[a.id];
     el.innerHTML = `<div class="dhero">${posterBox(a)}<div class="shade"></div><div class="tools"><button class="icon-btn" id="bk" aria-label="Назад">${ico('back')}</button><div class="row"><button class="icon-btn" id="sh" aria-label="Поділитися">${ico('share')}</button><button class="icon-btn" id="fv" aria-label="Улюблений">${ico('heart', 'heart' + (fav ? ' on' : ''))}</button></div></div></div>
     <div class="dname"><div class="row" style="flex-wrap:wrap"><span class="tag ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}-ранг</span>${tagEl(a)}<span class="tag">${esc(specUa(a))}</span>${TIER[a.id] ? `<span class="tag tier ${tierCls(TIER[a.id].t)}">${tierName(TIER[a.id].t)}</span>` : ''}${a.released === false ? '<span class="tag soon">Скоро</span>' : ''}</div>
       <h1 class="h-disp h1 rise" style="--i:1;text-shadow:0 0 30px ${c}55">${esc(a.name_ua)}</h1><div class="mono muted" style="font-size:12px;letter-spacing:.1em">${esc(a.name_en)} · ${esc(facShort(a))}</div></div>
     <div class="tabs ${GUIDES[a.id] ? 't5' : ''}" id="tabs">${(GUIDES[a.id] ? ['Історія', 'Огляд', 'Збірка', 'Команди', 'Навички'] : ['Історія', 'Гайд', 'Збірка']).map((n, i) => `<button class="${i === 0 ? 'on' : ''}">${n}</button>`).join('')}<span class="ul"></span></div>
     <div id="pane" class="pane"></div>
-    <div class="cta-bar"><button class="icon-btn" id="pv" aria-label="Попередній" style="height:52px;width:52px">${ico('back')}</button><button class="btn sp ${inSq ? 'ghost' : ''}" id="sq">${inSq ? ico('check') + 'У складі' : ico('plus') + 'У мій склад'}</button><button class="icon-btn" id="nx" aria-label="Наступний" style="height:52px;width:52px">${ico('next')}</button></div>`;
+    <div class="cta-bar"><button class="icon-btn" id="pv" aria-label="Попередній" style="height:52px;width:52px">${ico('back')}</button><button class="btn sp ${own ? 'ghost' : ''}" id="ow" aria-pressed="${own}">${own ? ico('check') + 'Є в мене' : ico('plus') + 'Є в мене'}</button><button class="icon-btn" id="gl" aria-label="Поставити ціль" style="height:52px;width:52px">${ico('flag')}</button><button class="icon-btn" id="nx" aria-label="Наступний" style="height:52px;width:52px">${ico('next')}</button></div>`;
     const pane = $('#pane', el), tabs = $('#tabs', el);
     const placeUl = () => { const b = $$('button', tabs)[tab], u = $('.ul', tabs); u.style.width = b.offsetWidth + 'px'; u.style.transform = `translateX(${b.offsetLeft}px)`; $$('button', tabs).forEach((x, k) => x.classList.toggle('on', k === tab)); };
     const g = a.guide, h = a.stats_hint;
@@ -1371,11 +1573,11 @@ SCREENS.agent = {
     $('#bk', el).onclick = () => back();
     $('#fv', el).onclick = (e) => { const on_ = toggleFav(a.id, e); const s = $('#fv svg', el); s.classList.toggle('on', on_); s.classList.remove('pop'); void s.offsetWidth; s.classList.add('pop'); };
     $('#sh', el).onclick = () => { const txt = `${a.name_ua} — ${a.tagline_ua} (Досьє Ерідо)`; try { navigator.clipboard.writeText(txt).then(() => toast('Скопійовано в буфер'), () => toast('Скопіюй вручну: ' + a.name_ua, 'info')); } catch (e) { toast('Скопіюй вручну: ' + a.name_ua, 'info'); } };
-    $('#sq', el).onclick = (e) => {
-      const i = S.squad.indexOf(a.id);
-      if (i >= 0) { S.squad[i] = null; save(); toast('Прибрано зі складу', 'close'); } else { const e0 = S.squad.indexOf(null); if (e0 < 0) { toast('Склад повний — звільни слот', 'info'); return; } S.squad[e0] = a.id; save(); sfx.ok(); vib(14); toast(`У складі: ${a.name_ua}`, 'squad'); if (S.squad.every(Boolean)) award('cmd'); }
-      const inS = S.squad.includes(a.id); const b = $('#sq', el); b.classList.toggle('ghost', inS); b.innerHTML = inS ? ico('check') + 'У складі' : ico('plus') + 'У мій склад';
+    $('#ow', el).onclick = () => {
+      const on_ = !S.own[a.id]; setOwn(a.id, on_); sfx.ok(); vib(12); toast(on_ ? `${a.name_ua}: додано до мого складу` : `${a.name_ua}: прибрано зі складу`, on_ ? 'check' : 'close');
+      const b = $('#ow', el); b.classList.toggle('ghost', on_); b.setAttribute('aria-pressed', on_); b.innerHTML = ico(on_ ? 'check' : 'plus') + 'Є в мене';
     };
+    $('#gl', el).onclick = () => openGoalForm({ a: a.id });
     const swap = (d) => { const n = AG[(idx + d + AG.length) % AG.length]; S.seen[n.id] = 1; save(); go('agent', { id: n.id }, { dir: d > 0 ? 'replace' : 'replace-back' }); };
     $('#nx', el).onclick = () => swap(1); $('#pv', el).onclick = () => swap(-1);
     let x0 = null; const hero = $('.dhero', el);
@@ -1580,6 +1782,304 @@ SCREENS.article = {
   },
 };
 
+/* ===== MY (Companion layer): collection, goals planner, pull tracker, backup, "more" hub ===== */
+const ownCount = () => Object.keys(S.own).length;
+function setOwn(id, on_) { if (on_) S.own[id] = S.own[id] || { lv: 1, m: 0 }; else delete S.own[id]; save(); }
+const localDay = () => new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+const uid = (p) => p + Date.now().toString(36) + Math.floor(Math.random() * 1e4).toString(36);
+const fmtD = (s) => (s ? String(s).split('-').reverse().join('.') : '');
+const num = (v) => { const t = String(v).trim(); return /^\d{1,4}$/.test(t) ? +t : NaN; };
+
+/* toast with an action button (undo) */
+let toastAT;
+function toastAct(msg, label, fn) {
+  const t = $('#toast'); if (!t) return;
+  t.innerHTML = `<b>${ico('check')}</b><span>${esc(msg)}</span><button class="tact" type="button">${esc(label)}</button>`;
+  t.classList.add('show', 'act');
+  $('.tact', t).onclick = () => { t.classList.remove('show', 'act'); clearTimeout(toastAT); fn(); };
+  clearTimeout(toastAT); toastAT = setTimeout(() => t.classList.remove('show', 'act'), 5200);
+}
+
+/* ---------- pulls: everything is derived from the log, so "undo" is exact ---------- */
+const BN = {
+  agent: { n: 'Агент', hard: 90, soft: 74, lim: true, rate: '50/50', what: 'агент' },
+  engine: { n: 'W-Engine', hard: 80, soft: 0, lim: true, rate: '75/25', what: 'W-Engine' },
+  std: { n: 'Стандарт', hard: 90, soft: 0, lim: false, rate: '', what: 'S-ранг' },
+};
+function pityOf(b) {
+  let n = 0, g = false, pulls = 0, s = 0, wins = 0, sum = 0; const hist = [];
+  S.pulls.filter((x) => x.b === b).forEach((x) => {
+    if (x.k === 'a') { n += x.n; pulls += x.n; } else { pulls += x.n; s++; sum += x.pos; if (x.win) wins++; hist.push(x); n = 0; g = BN[b].lim && !x.win; }
+  });
+  return { n, g, hist, pulls, s, wins, avg: s ? Math.round(sum / s) : 0 };
+}
+function untilGuarantee(b, have) {
+  const c = BN[b], p = pityOf(b), rem = c.hard - p.n;
+  const worst = c.lim && !p.g ? rem + c.hard : rem;
+  const out = { rem, worst, soft: c.soft && p.n < c.soft ? c.soft - p.n : 0, p };
+  if (have != null) { out.okS = have >= rem; out.lackS = Math.max(0, rem - have); out.okW = have >= worst; out.lackW = Math.max(0, worst - have); out.left = Math.max(0, have - rem); }
+  return out;
+}
+
+/* ---------- goals ---------- */
+const STEP_PRESETS = ['Отримати агента', 'Підняти до 60 рівня', 'Підібрати W-Engine', 'Зібрати диски драйву', 'Прокачати навички'];
+const goalDone = (g) => (g.steps.length ? g.steps.every((s) => s.d) : !!g.d);
+const goalPct = (g) => (g.steps.length ? Math.round((g.steps.filter((s) => s.d).length / g.steps.length) * 100) : g.d ? 100 : 0);
+function dueInfo(g) {
+  if (!g.due || goalDone(g)) return null;
+  const days = Math.round((Date.parse(g.due) - Date.parse(localDay())) / 864e5);
+  if (days < 0) return ['over', `прострочено на ${-days} дн.`];
+  if (days === 0) return ['soon', 'сьогодні'];
+  if (days <= 3) return ['soon', `ще ${days} дн.`];
+  return ['', 'до ' + fmtD(g.due)];
+}
+function myHomeCards() {
+  const act = S.goals.filter((g) => !goalDone(g)).length, p = pityOf('agent');
+  const c = (k, big, lab, sub) => `<button class="card mini" data-my="${k}"><b>${big}</b><span>${lab}</span><small>${sub}</small></button>`;
+  return c(0, `${ownCount()}`, 'у складі', `із ${AG.length}`) + c(1, `${act}`, 'цілей', act ? 'активні' : 'додай першу') + c(2, `${p.n}`, 'до 90', `крутка агента`);
+}
+
+/* ---------- goal form / sheet ---------- */
+function openGoalForm(pre = {}) {
+  const st = { a: pre.a || '', steps: new Set(pre.a ? STEP_PRESETS.map((_, i) => i) : []) };
+  const aList = [...AG].sort((x, y) => (S.own[y.id] ? 1 : 0) - (S.own[x.id] ? 1 : 0) || x.name_ua.localeCompare(y.name_ua, 'uk'));
+  const nameOf = () => (st.a ? `Зібрати ${agent(st.a).name_ua.split(' ')[0]}` : '');
+  const sh = openSheet(`<div class="eyebrow">Планер</div><h3 class="h-disp h2" style="margin:12px 0 16px">Нова ціль</h3>
+    <div class="fld"><label for="gt">Назва</label><input class="inp" id="gt" maxlength="40" placeholder="Напр. Зібрати Анбі" autocomplete="off" value="${esc(pre.t || nameOf())}"><div class="err" id="gte" role="alert"></div></div>
+    <div class="fld"><label for="ga">Агент (необовʼязково)</label><select class="inp" id="ga"><option value="">Без агента</option>${aList.map((a) => `<option value="${a.id}" ${a.id === st.a ? 'selected' : ''}>${esc(a.name_ua)}${S.own[a.id] ? ' · є в мене' : ''}</option>`).join('')}</select></div>
+    <div class="fld"><label>Кроки</label><div class="chips" id="gs">${STEP_PRESETS.map((t, i) => `<button type="button" class="chip ${st.steps.has(i) ? 'on' : ''}" data-i="${i}" aria-pressed="${st.steps.has(i)}">${esc(t)}</button>`).join('')}</div></div>
+    <div class="fld"><label for="gd">Дата (необовʼязково)</label><input class="inp" id="gd" type="date" min="${localDay()}"></div>
+    <div style="display:grid;gap:10px;margin-top:8px"><button class="btn block" id="gok">${ico('plus')}Створити ціль</button><button class="btn block ghost" data-close>Скасувати</button></div>`);
+  let touched = !!pre.t;
+  $('#gt', sh).oninput = () => { touched = true; $('#gte', sh).textContent = ''; };
+  $('#ga', sh).onchange = (e) => {
+    st.a = e.target.value; if (st.a && st.steps.size === 0) STEP_PRESETS.forEach((_, i) => st.steps.add(i));
+    $$('#gs .chip', sh).forEach((c) => { const on_ = st.steps.has(+c.dataset.i); c.classList.toggle('on', on_); c.setAttribute('aria-pressed', on_); });
+    if (!touched) $('#gt', sh).value = nameOf();
+  };
+  on($('#gs', sh), 'click', '.chip', (e, c) => { const i = +c.dataset.i; st.steps.has(i) ? st.steps.delete(i) : st.steps.add(i); c.classList.toggle('on', st.steps.has(i)); c.setAttribute('aria-pressed', st.steps.has(i)); });
+  $('[data-close]', sh).onclick = () => closeSheet();
+  $('#gok', sh).onclick = () => {
+    const t = $('#gt', sh).value.trim();
+    if (!t) { $('#gte', sh).textContent = 'Введіть назву цілі'; $('#gt', sh).classList.add('bad'); sfx.no(); $('#gt', sh).focus(); return; }
+    const g = { id: uid('g'), t, a: st.a, due: $('#gd', sh).value || '', steps: [...st.steps].sort().map((i) => ({ t: STEP_PRESETS[i], d: false })), ts: Date.now() };
+    S.goals.unshift(g); save(); closeSheet(); sfx.ok(); vib(12); toast('Ціль додано до планера', 'flag');
+    S._my = 1; const cur = topInst(); if (cur && cur.name === 'my') cur.el._draw && cur.el._draw(); else go('my', {}, { dir: 'root' });
+  };
+}
+
+function openGoal(id) {
+  const g = S.goals.find((x) => x.id === id); if (!g) return;
+  const a = g.a && agent(g.a);
+  const body = () => {
+    const done = goalDone(g), pct = goalPct(g), di = dueInfo(g);
+    return `<div class="eyebrow">${done ? 'Виконано' : 'Ціль'}</div><h3 class="h-disp h2" style="margin:12px 0 6px">${esc(g.t)}</h3>
+    <div class="row" style="gap:8px;flex-wrap:wrap;margin-bottom:14px">${a ? `<button class="chip" data-ag="${a.id}">${ico('agents')}${esc(a.name_ua)}</button>` : ''}${di ? `<span class="chip due ${di[0]}">${esc(di[1])}</span>` : g.due ? `<span class="chip due">${fmtD(g.due)}</span>` : ''}<span class="chip">${pct}%</span></div>
+    <div class="meter" style="margin-bottom:14px"><i style="width:${pct}%"></i></div>
+    ${done ? `<div class="okbox" role="status">${ico('trophy')}<span><b>Ціль виконано.</b> Додати наступну?</span></div>` : ''}
+    <div class="stl" id="stl">${g.steps.map((s, i) => `<button class="stp ${s.d ? 'on' : ''}" data-i="${i}" role="checkbox" aria-checked="${s.d}"><span class="cb">${s.d ? ico('check') : ''}</span><span>${esc(s.t)}</span></button>`).join('') || (g.steps.length === 0 ? `<button class="stp ${g.d ? 'on' : ''}" data-i="-1" role="checkbox" aria-checked="${!!g.d}"><span class="cb">${g.d ? ico('check') : ''}</span><span>Позначити виконаною</span></button>` : '')}</div>
+    <div class="row" style="gap:8px;margin:12px 0 18px"><input class="inp" id="ns" maxlength="40" placeholder="Додати свій крок" aria-label="Новий крок" style="flex:1"><button class="icon-btn" id="nsb" aria-label="Додати крок">${ico('plus')}</button></div>
+    <div style="display:grid;gap:10px">${done ? `<button class="btn block" id="nx">${ico('plus')}Нова ціль</button>` : ''}${a ? `<button class="btn block ghost" id="gd">${ico('book')}Відкрити гайд</button>` : ''}<button class="btn block ghost" id="gx" style="color:var(--bad)">${ico('trash')}Видалити ціль</button></div>`;
+  };
+  const sh = openSheet(body()); let wasDone = goalDone(g);
+  const redraw = () => { const b = $('.body', sh), top = b.scrollTop; b.innerHTML = body(); b.scrollTop = top; bind(); const cur = topInst(); cur && cur.el._draw && cur.el._draw(); };
+  const bind = () => {
+    on($('#stl', sh), 'click', '.stp', (e, b) => {
+      const i = +b.dataset.i; if (i < 0) g.d = !g.d; else g.steps[i].d = !g.steps[i].d; save(); sfx.tap(); vib(8);
+      const nd = goalDone(g); redraw();
+      if (nd && !wasDone) { sfx.win(); confetti(70); toast('Ціль виконано', 'trophy'); } wasDone = nd;
+    });
+    const add = () => { const v = $('#ns', sh).value.trim(); if (!v) { $('#ns', sh).classList.add('bad'); sfx.no(); return; } g.steps.push({ t: v, d: false }); wasDone = false; save(); redraw(); };
+    $('#nsb', sh).onclick = add; $('#ns', sh).onkeydown = (e) => { if (e.key === 'Enter') add(); };
+    const ag = $('[data-ag]', sh); if (ag) ag.onclick = () => { closeSheet(); setTimeout(() => go('agent', { id: a.id }), 200); };
+    const gd = $('#gd', sh); if (gd) gd.onclick = () => { closeSheet(); setTimeout(() => go('agent', { id: a.id, tab: GUIDES[a.id] ? 2 : 1 }), 200); };
+    const nx = $('#nx', sh); if (nx) nx.onclick = () => { closeSheet(); setTimeout(() => openGoalForm({}), 350); };
+    $('#gx', sh).onclick = () => {
+      const i = S.goals.indexOf(g); S.goals.splice(i, 1); save(); closeSheet(); sfx.tap();
+      const cur = topInst(); cur && cur.el._draw && cur.el._draw();
+      toastAct('Ціль видалено', 'Скасувати', () => { S.goals.splice(Math.min(i, S.goals.length), 0, g); save(); const c = topInst(); c && c.el._draw && c.el._draw(); toast('Ціль повернено', 'undo'); });
+    };
+  };
+  bind();
+}
+
+/* ---------- agent owned sheet ---------- */
+function openOwned(id) {
+  const a = agent(id); if (!a) return; const upd = () => { const cur = topInst(); cur && cur.el._draw && cur.el._draw(); };
+  const body = () => { const o = S.own[id];
+    return `<div class="row" style="gap:14px;margin-bottom:16px"><span class="pic big">${poster(a)}</span><div style="min-width:0"><div class="eyebrow">${esc(elOf(a).ua)} · ${esc(specUa(a))}</div><h3 class="h-disp h2" style="margin:8px 0 0">${esc(a.name_ua)}</h3></div></div>
+    <div class="setrow" style="padding-top:4px"><span class="tx"><b>Є в мене</b><small>Позначити агента у моєму складі</small></span><button class="sw ${o ? 'on' : ''}" id="osw" role="switch" aria-checked="${!!o}" aria-label="Є в мене"></button></div>
+    ${o ? `<div class="fld" style="margin-top:16px"><label for="lvr">Рівень: <b id="lvv">${o.lv}</b> / 60</label><div class="row" style="gap:8px"><button class="icon-btn" data-d="-10" aria-label="Мінус 10 рівнів">−10</button><button class="icon-btn" data-d="-1" aria-label="Мінус рівень">−</button><input id="lvr" type="range" min="1" max="60" value="${o.lv}" style="flex:1;accent-color:var(--acid)"><button class="icon-btn" data-d="1" aria-label="Плюс рівень">+</button><button class="icon-btn" data-d="10" aria-label="Плюс 10 рівнів">+10</button></div></div>
+    <div class="fld"><label>Mindscape Cinema</label><div class="chips" id="mm">${[0, 1, 2, 3, 4, 5, 6].map((m) => `<button type="button" class="chip ${o.m === m ? 'on' : ''}" data-m="${m}" aria-pressed="${o.m === m}">M${m}</button>`).join('')}</div></div>
+    <div style="display:grid;gap:10px;margin-top:6px"><button class="btn block ghost" id="osq">${ico('squad')}${S.squad.includes(id) ? 'Прибрати з загону' : 'У загін'}</button><button class="btn block ghost" id="ogl">${ico('flag')}Поставити ціль</button><button class="btn block ghost" id="odo">${ico('book')}Відкрити досьє</button></div>` : `<div style="display:grid;gap:10px;margin-top:14px"><button class="btn block ghost" id="odo">${ico('book')}Відкрити досьє</button></div>`}`; };
+  const sh = openSheet(body(), upd);
+  const redraw = () => { const b = $('.body', sh); b.innerHTML = body(); bind(); upd(); };
+  const bind = () => {
+    $('#osw', sh).onclick = () => { setOwn(id, !S.own[id]); sfx.ok(); vib(10); redraw(); };
+    const r = $('#lvr', sh); if (r) { r.oninput = () => { S.own[id].lv = +r.value; $('#lvv', sh).textContent = r.value; save(); }; r.onchange = upd; }
+    on(sh, 'click', '[data-d]', (e, b) => { S.own[id].lv = clamp(S.own[id].lv + +b.dataset.d, 1, 60); save(); sfx.tap(); $('#lvr', sh).value = S.own[id].lv; $('#lvv', sh).textContent = S.own[id].lv; });
+    on(sh, 'click', '[data-m]', (e, b) => { S.own[id].m = +b.dataset.m; save(); sfx.tap(); $$('#mm .chip', sh).forEach((c) => { const on_ = +c.dataset.m === S.own[id].m; c.classList.toggle('on', on_); c.setAttribute('aria-pressed', on_); }); });
+    const q = $('#osq', sh); if (q) q.onclick = () => { const i = S.squad.indexOf(id); if (i >= 0) { S.squad[i] = null; toast('Прибрано з загону', 'close'); } else { const e0 = S.squad.indexOf(null); if (e0 < 0) { toast('Загін повний — звільни слот', 'info'); return; } S.squad[e0] = id; sfx.ok(); toast(`У загоні: ${a.name_ua}`, 'squad'); if (S.squad.every(Boolean)) award('cmd'); } save(); redraw(); };
+    const g = $('#ogl', sh); if (g) g.onclick = () => { closeSheet(); setTimeout(() => openGoalForm({ a: id }), 350); };
+    $('#odo', sh).onclick = () => { closeSheet(); setTimeout(() => go('agent', { id }), 200); };
+  };
+  bind();
+}
+
+/* ---------- MY screen ---------- */
+function paneSquad(host) {
+  const sq = S.squad.map((id) => id && agent(id)); const r = evalSquad(S.squad), v = VERDICT(r.score);
+  const q = host._q || '', fl = host._f || 'all';
+  const L = AG.filter((a) => (fl === 'all' || (fl === 'own' ? S.own[a.id] : !S.own[a.id])) && (!q || [a.name_ua, a.name_en].join(' ').toLowerCase().includes(q.toLowerCase())));
+  const pct = Math.round((ownCount() / AG.length) * 100);
+  host.innerHTML = `<div class="card sqcard"><div class="row" style="gap:10px;align-items:stretch">${sq.map((a, i) => (a ? `<button class="mslot fill" data-sq="${i}" aria-label="Слот ${i + 1}: ${esc(a.name_ua)}"><span class="pic">${poster(a)}</span><b>${esc(a.name_ua.split(' ')[0])}</b></button>` : `<button class="mslot" data-sq="${i}" aria-label="Слот ${i + 1}: порожній">${ico('plus')}<small>Слот ${i + 1}</small></button>`)).join('')}</div>
+    <div class="row" style="margin-top:12px;gap:10px"><div style="flex:1;min-width:0"><div class="mono muted" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">Загін · синергія</div><div class="h-disp h3" style="margin-top:2px">${esc(v[0])} <span class="muted" style="font-size:16px">${r.score}/100</span></div></div><button class="btn sm ghost" id="sqe">Конструктор</button></div></div>
+    <div class="card" style="padding:14px 16px;margin-top:12px"><div class="row" style="align-items:baseline"><div class="h-disp h3">Мої агенти</div><span class="sp"></span><span class="mono muted" style="font-size:12px"><b style="color:var(--paper)">${ownCount()}</b> із ${AG.length}</span></div><div class="meter" style="margin-top:10px"><i style="width:${pct}%"></i></div></div>
+    <div style="margin-top:12px"><label class="search">${ico('search')}<input id="oq" placeholder="Знайти агента" aria-label="Пошук агента" autocomplete="off" value="${esc(q)}"></label></div>
+    <div class="hscroll flush" style="padding-top:10px"><button class="chip ${fl === 'all' ? 'on' : ''}" data-f="all">Усі</button><button class="chip ${fl === 'own' ? 'on' : ''}" data-f="own">Мої</button><button class="chip ${fl === 'no' ? 'on' : ''}" data-f="no">Немає</button></div>
+    <div class="mono muted" style="padding:12px 0 8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase">Знайдено: ${L.length}</div>
+    ${L.length ? `<div class="agrid flush">${L.map((a, i) => { const o = S.own[a.id]; return `<button class="acard ocard ${o ? 'has' : 'no'}" data-o="${a.id}" aria-label="${esc(a.name_ua)}${o ? ', рівень ' + o.lv + ', M' + o.m : ', немає в мене'}">${posterBox(a)}<div class="shade"></div><span class="tag rar ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}</span>${o ? `<span class="ownb">${ico('check')}</span>` : ''}<div class="meta"><div class="nm">${esc(a.name_ua)}</div><div class="fc">${o ? `Рів. ${o.lv} · M${o.m}` : 'Немає'}</div></div></button>`; }).join('')}</div>` : (fl === 'own' && !ownCount() ? emptyState('Склад порожній', 'Додайте першого агента: торкніться картки в списку «Усі»') : emptyState('Нікого не знайдено', 'Спробуй інший запит'))}`;
+  on(host, 'click', '[data-o]', (e, b) => openOwned(b.dataset.o));
+  on(host, 'click', '[data-f]', (e, c) => { host._f = c.dataset.f; paneSquad(host); });
+  const oq = $('#oq', host); oq.oninput = () => { host._q = oq.value; const pos = oq.selectionStart; paneSquad(host); const n = $('#oq', host); n.focus(); n.setSelectionRange(pos, pos); };
+  on(host, 'click', '[data-sq]', () => go('squad')); $('#sqe', host).onclick = () => go('squad');
+}
+
+function paneGoals(host) {
+  const f = host._gf || 0; const act = S.goals.filter((g) => !goalDone(g)), done = S.goals.filter(goalDone);
+  const L = f === 0 ? act : done;
+  host.innerHTML = `<div class="row" style="gap:10px"><button class="btn sp" id="gn">${ico('plus')}Нова ціль</button></div>
+    <div class="hscroll flush" style="padding-top:12px"><button class="chip ${f === 0 ? 'on' : ''}" data-gf="0">Активні · ${act.length}</button><button class="chip ${f === 1 ? 'on' : ''}" data-gf="1">Виконані · ${done.length}</button></div>
+    <div class="glist">${L.length ? L.map((g) => { const a = g.a && agent(g.a), di = dueInfo(g), pct = goalPct(g), ds = g.steps.filter((s) => s.d).length;
+      return `<button class="card goal ${goalDone(g) ? 'fin' : ''}" data-g="${g.id}" aria-label="${esc(g.t)}, ${pct}%"><span class="gav">${a ? poster(a) : ico('flag')}</span><span class="gtx"><b>${esc(g.t)}</b><small>${g.steps.length ? `${ds} із ${g.steps.length} кроків` : goalDone(g) ? 'Виконано' : 'Без кроків'}${di ? ` · <span class="due ${di[0]}">${esc(di[1])}</span>` : g.due ? ' · ' + fmtD(g.due) : ''}</small><span class="meter"><i style="width:${pct}%"></i></span></span>${ico('next')}</button>`; }).join('')
+      : (f === 0 ? `<div class="empty">${mascot(96)}<b style="font:700 20px var(--f-display);text-transform:uppercase;color:var(--paper)">${done.length ? 'Усі цілі виконано' : 'Цілей ще немає'}</b><span>${done.length ? 'Додати наступну?' : 'Постав першу ціль, наприклад «Зібрати Анбі»'}</span></div>` : emptyState('Порожньо', 'Виконані цілі зʼявляться тут'))}</div>`;
+  $('#gn', host).onclick = () => openGoalForm({});
+  on(host, 'click', '[data-gf]', (e, c) => { host._gf = +c.dataset.gf; paneGoals(host); });
+  on(host, 'click', '[data-g]', (e, c) => openGoal(c.dataset.g));
+}
+
+function paneTracker(host) {
+  const bk = host._bn || 'agent', c = BN[bk], p = pityOf(bk), u = untilGuarantee(bk);
+  const bar = `<div class="gbar" role="img" aria-label="${p.n} із ${c.hard} круток до гарантії"><i style="width:${(p.n / c.hard) * 100}%"></i>${c.soft ? `<u style="left:${(c.soft / c.hard) * 100}%" aria-hidden="true"><em>${c.soft}</em></u>` : ''}<u class="end" style="left:100%" aria-hidden="true"><em>${c.hard}</em></u></div>`;
+  const stat = c.lim ? (p.g ? 'Наступний S-ранг: гарантовано обраний' : `Наступний S-ранг: ${c.rate}`) : 'Стандартний канал: без гарантії обраного';
+  host.innerHTML = `<div class="segh" id="bsw"></div>
+    <div class="card gauge"><div class="row" style="align-items:flex-end"><div class="gv"><b id="gn">${p.n}</b><span>/${c.hard}</span></div></div>${bar}<div class="gstat"><span class="chip ${c.lim && p.g ? 'on' : ''}">${esc(stat)}</span></div>
+      <div class="gnote">${c.soft && p.n < c.soft ? `До м'якої гарантії: ${c.soft - p.n}. ` : c.soft && p.n >= c.soft ? "М'яка гарантія вже діє. " : ''}До гарантованого S-рангу: <b>${u.rem}</b> круток.</div></div>
+    <div class="row" style="gap:10px;margin-top:12px"><button class="btn sp ghost tight" id="tadd">${ico('plus')}Без S-рангу</button><button class="btn sp tight" id="ts">${ico('star')}Записати S</button></div>
+    <div class="card calc"><div class="h-disp h3">До гарантії</div><div class="fld" style="margin:10px 0 0"><label for="cb">У мене круток</label><input class="inp" id="cb" inputmode="numeric" placeholder="Напр. 60" autocomplete="off" aria-describedby="cbe"><div class="err" id="cbe" role="alert"></div></div><div id="cres" class="cres"></div></div>
+    <div class="stats3">${[[p.pulls, 'круток'], [p.s, 'S-рангів'], [p.s ? p.avg : '—', 'у середньому']].map((x) => `<div class="card"><b>${x[0]}</b><small>${x[1]}</small></div>`).join('')}</div>
+    ${c.lim && p.s ? `<div class="mono muted" style="font-size:11px;letter-spacing:.06em;margin:-4px 0 12px;text-transform:uppercase">Обраних S-рангів: ${p.wins} із ${p.s}</div>` : ''}
+    <div class="row" style="align-items:baseline;margin:6px 0 8px"><div class="h-disp h3">Історія</div><span class="sp"></span><button class="lnk" id="tun" ${S.pulls.some((x) => x.b === bk) ? '' : 'hidden'}>${ico('undo')}Скасувати останній запис</button></div>
+    <div id="hist"></div>`;
+  const sw = segment(Object.values(BN).map((x) => x.n), ['agent', 'engine', 'std'].indexOf(bk), (i) => { host._bn = ['agent', 'engine', 'std'][i]; paneTracker(host); });
+  $('#bsw', host).appendChild(sw);
+  const log = S.pulls.filter((x) => x.b === bk).slice().reverse();
+  $('#hist', host).innerHTML = log.length ? log.map((x) => x.k === 'a' ? `<div class="hrow add"><span class="hk">+${x.n}</span><span class="ht"><b>Без S-рангу</b><small>${fmtD(x.d)}</small></span></div>` : `<div class="hrow s"><span class="hk">S</span><span class="ht"><b>Крутка №${x.pos}${c.lim ? (x.win ? ' · обраний' : ' · не обраний') : ''}</b><small>${esc(x.name || BN[bk].what)} · ${fmtD(x.d)}</small></span></div>`).join('') : emptyState('Історія порожня', 'Додайте крутки, щоб побачити лічильник');
+  const calc = () => {
+    const v = $('#cb', host).value, e = $('#cbe', host), r = $('#cres', host);
+    if (!v.trim()) { e.textContent = ''; $('#cb', host).classList.remove('bad'); r.innerHTML = `<p>До гарантованого S-рангу: <b>${u.rem}</b>${c.lim && !p.g ? `. Якщо S-ранг буде не обраним, найгірший випадок: <b>${u.worst}</b> круток разом.` : '.'}</p>`; return; }
+    const n = num(v); if (isNaN(n)) { e.textContent = 'Введіть ціле число від 0 до 9999'; $('#cb', host).classList.add('bad'); r.innerHTML = ''; return; }
+    e.textContent = ''; $('#cb', host).classList.remove('bad'); const w = untilGuarantee(bk, n);
+    r.innerHTML = `<p class="${w.okS ? 'good' : ''}">${w.okS ? `Вистачає на гарантований S-ранг, лишиться <b>${w.left}</b>.` : `До гарантованого S-рангу бракує <b>${w.lackS}</b> круток.`}</p>${c.lim && !p.g ? `<p class="${w.okW ? 'good' : ''}">${w.okW ? 'Вистачає навіть на найгірший випадок.' : `У найгіршому випадку (не обраний) бракує <b>${w.lackW}</b>.`}</p>` : ''}`;
+  };
+  $('#cb', host).oninput = calc; calc();
+  /* add pulls without S */
+  $('#tadd', host).onclick = () => {
+    const sh = openSheet(`<div class="eyebrow">${esc(c.n)}</div><h3 class="h-disp h2" style="margin:12px 0 4px">Крутки без S-рангу</h3><p class="muted" style="margin:0 0 14px;font-size:14px">Зараз у лічильнику ${p.n}. Ще можна додати не більше ${Math.max(0, c.hard - 1 - p.n)}.</p>
+      <div class="fld"><label for="an">Скільки круток</label><input class="inp" id="an" inputmode="numeric" value="10" autocomplete="off" aria-describedby="ane"><div class="err" id="ane" role="alert"></div></div><div class="chips" id="aq" style="margin-bottom:16px">${[1, 10, 20, 30].map((n) => `<button type="button" class="chip" data-n="${n}">+${n}</button>`).join('')}</div>
+      <div style="display:grid;gap:10px"><button class="btn block" id="aok">Додати</button><button class="btn block ghost" data-close>Скасувати</button></div>`);
+    const inp = $('#an', sh); on($('#aq', sh), 'click', '.chip', (e, b) => { inp.value = (num(inp.value) || 0) + +b.dataset.n; $('#ane', sh).textContent = ''; inp.classList.remove('bad'); });
+    inp.oninput = () => { $('#ane', sh).textContent = ''; inp.classList.remove('bad'); };
+    $('[data-close]', sh).onclick = () => closeSheet();
+    $('#aok', sh).onclick = () => {
+      const n = num(inp.value), max = c.hard - 1 - p.n; const e = $('#ane', sh);
+      if (isNaN(n) || n < 1) { e.textContent = 'Введіть ціле число більше нуля'; inp.classList.add('bad'); sfx.no(); return; }
+      if (n > max) { e.textContent = `Забагато: на ${n} крутках гарантія вже спрацює. Можна додати не більше ${max}.`; inp.classList.add('bad'); sfx.no(); vib([20, 40, 20]); return; }
+      S.pulls.push({ id: uid('p'), b: bk, k: 'a', n, d: localDay() }); save(); closeSheet(); sfx.ok(); vib(10); paneTracker(host); toast(`Додано ${n} круток`, 'plus');
+    };
+  };
+  /* record S */
+  $('#ts', host).onclick = () => {
+    const max = c.hard - p.n; let win = true;
+    const sh = openSheet(`<div class="eyebrow">${esc(c.n)}</div><h3 class="h-disp h2" style="margin:12px 0 4px">Записати S-ранг</h3><p class="muted" style="margin:0 0 14px;font-size:14px">Скільки круток зробили від попереднього S-рангу до цього, враховуючи його. У лічильнику вже ${p.n}, тож тут від 1 до ${max}.</p>
+      <div class="fld"><label for="sn">Крутки до S (включно)</label><input class="inp" id="sn" inputmode="numeric" placeholder="1–${max}" autocomplete="off" aria-describedby="sne"><div class="err" id="sne" role="alert"></div></div>
+      ${c.lim ? `<div class="fld"><label>Це ${esc(c.what)} з банера?</label>${p.g ? `<div class="note">Гарантія спрацювала: S-ранг обраний.</div>` : `<div class="chips" id="sw2"><button type="button" class="chip on" data-w="1" aria-pressed="true">Так, обраний</button><button type="button" class="chip" data-w="0" aria-pressed="false">Ні, не обраний</button></div>`}</div>` : ''}
+      <div class="fld"><label for="snm">Назва (необовʼязково)</label><input class="inp" id="snm" maxlength="24" placeholder="Напр. Анбі" autocomplete="off"></div>
+      <div style="display:grid;gap:10px;margin-top:6px"><button class="btn block" id="sok">${ico('star')}Записати</button><button class="btn block ghost" data-close>Скасувати</button></div>`);
+    on(sh, 'click', '#sw2 .chip', (e, b) => { win = b.dataset.w === '1'; $$('#sw2 .chip', sh).forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); }); });
+    const inp = $('#sn', sh); inp.oninput = () => { $('#sne', sh).textContent = ''; inp.classList.remove('bad'); };
+    $('[data-close]', sh).onclick = () => closeSheet();
+    $('#sok', sh).onclick = () => {
+      const n = num(inp.value), e = $('#sne', sh);
+      if (isNaN(n) || n < 1) { e.textContent = 'Введіть ціле число більше нуля'; inp.classList.add('bad'); sfx.no(); return; }
+      if (n > max) { e.textContent = `Забагато: гарантія на ${c.hard}-й крутці. Можна вказати від 1 до ${max}.`; inp.classList.add('bad'); sfx.no(); vib([20, 40, 20]); return; }
+      const w = !c.lim || p.g || win;
+      S.pulls.push({ id: uid('p'), b: bk, k: 's', n, pos: p.n + n, win: w, name: $('#snm', sh).value.trim(), d: localDay() }); save(); closeSheet(); sfx.win(); vib([15, 30, 15]); paneTracker(host); toast(`S-ранг записано: крутка №${p.n + n}`, 'star');
+    };
+  };
+  $('#tun', host).onclick = () => { const i = S.pulls.map((x) => x.b).lastIndexOf(bk); if (i < 0) return; const [x] = S.pulls.splice(i, 1); save(); paneTracker(host); toastAct('Останній запис скасовано', 'Повернути', () => { S.pulls.splice(i, 0, x); save(); const cur = topInst(); cur && cur.el._draw && cur.el._draw(); }); };
+}
+
+SCREENS.my = {
+  tabs: true,
+  render(el) {
+    let pane = S._my || 0; S._my = 0; const LAB = ['Склад', 'Цілі', 'Крутки'];
+    el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Companion · тільки на цьому пристрої</div><div class="h-disp" style="margin-top:6px">Моє</div></div></div><div class="mypad"><div id="mseg"></div><div id="mp" class="mp"></div></div><div class="disc">Дані зберігаються лише у вашому браузері. Трекер вводиться вручну і не підключається до ігрового акаунту.</div>`;
+    const host = $('#mp', el);
+    const draw = () => { const y = el.scrollTop; [paneSquad, paneGoals, paneTracker][pane](host); el.scrollTop = y; };
+    el._draw = draw;
+    const seg = segment(LAB, pane, (i) => { pane = i; sfx.tap(); host.classList.remove('rise'); draw(); });
+    $('#mseg', el).appendChild(seg); draw();
+  },
+};
+
+/* ---------- backup (JSON export / import) ---------- */
+const BK_APP = 'eridu-dossier';
+const backupText = () => JSON.stringify({ app: BK_APP, v: 1, at: new Date().toISOString(), data: S }, (k, v) => (k[0] === '_' ? undefined : v), 1);
+function parseBackup(txt) {
+  let o; try { o = JSON.parse(txt); } catch (e) { return { err: 'Файл не схожий на резервну копію. Перевірте, чи це правильний файл.' }; }
+  if (!o || o.app !== BK_APP || !o.data || typeof o.data !== 'object') return { err: 'Це не резервна копія «Досьє Ерідо». Перевірте, чи це правильний файл.' };
+  const d = o.data; if (!d.user || typeof d.user !== 'object') return { err: 'У файлі немає профілю. Він пошкоджений або неповний.' };
+  const m = Object.assign(S0(), d); m.opts = Object.assign(S0().opts, d.opts || {}); m.user = Object.assign(S0().user, d.user || {}); m.quiz = Object.assign(S0().quiz, d.quiz || {});
+  if (!Array.isArray(m.goals) || !Array.isArray(m.pulls) || !m.own || typeof m.own !== 'object' || Array.isArray(m.own) || !Array.isArray(m.squad)) return { err: 'У файлі пошкоджена структура даних.' };
+  return { data: m, info: { own: Object.keys(m.own).length, goals: m.goals.length, pulls: m.pulls.length } };
+}
+function openBackup() {
+  const sh = openSheet(`<div class="eyebrow">Резервна копія</div><h3 class="h-disp h2" style="margin:12px 0 6px">Мої дані</h3><p class="muted" style="margin:0 0 16px;font-size:14px;line-height:1.5">Склад, цілі, історія круток, улюблені й прогрес. Збережіть файл, щоб перенести дані на інший пристрій.</p>
+    <div style="display:grid;gap:10px"><button class="btn block" id="bx">${ico('download')}Зберегти файл</button><button class="btn block ghost" id="bc">${ico('copy')}Скопіювати як текст</button><button class="btn block ghost" id="bi">${ico('upload')}Імпортувати</button></div>`);
+  $('#bx', sh).onclick = () => {
+    try { const b = new Blob([backupText()], { type: 'application/json' }), a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `eridu-dossier-${localDay()}.json`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast('Файл збережено', 'download'); } catch (e) { toast('Не вдалося зберегти файл. Спробуйте «Скопіювати».', 'info'); }
+  };
+  $('#bc', sh).onclick = () => { try { navigator.clipboard.writeText(backupText()).then(() => toast('Скопійовано в буфер', 'copy'), () => toast('Не вдалося скопіювати', 'info')); } catch (e) { toast('Не вдалося скопіювати', 'info'); } };
+  $('#bi', sh).onclick = () => openImport();
+}
+function openImport() {
+  const sh = openSheet(`<div class="eyebrow">Імпорт</div><h3 class="h-disp h2" style="margin:12px 0 14px">Відновити з копії</h3>
+    <div class="fld"><label for="bf">Файл копії</label><input class="inp" id="bf" type="file" accept=".json,application/json"></div>
+    <div class="fld"><label for="bt">Або вставте текст</label><textarea class="inp" id="bt" rows="4" placeholder='{"app":"eridu-dossier", …}' aria-describedby="bte"></textarea><div class="err" id="bte" role="alert"></div></div>
+    <div id="bsum"></div>
+    <div style="display:grid;gap:10px;margin-top:6px"><button class="btn block" id="bok">Перевірити</button><button class="btn block ghost" data-close>Скасувати</button></div>`);
+  let ready = null; const txt = $('#bt', sh), err = $('#bte', sh);
+  const check = (t) => { const r = parseBackup(t); if (r.err) { err.textContent = r.err; txt.classList.add('bad'); $('#bsum', sh).innerHTML = ''; ready = null; sfx.no(); return; } err.textContent = ''; txt.classList.remove('bad'); ready = r.data; $('#bsum', sh).innerHTML = `<div class="okbox">${ico('check')}<span>У копії: у складі ${r.info.own}, цілей ${r.info.goals}, записів круток ${r.info.pulls}. Поточні дані буде замінено.</span></div>`; $('#bok', sh).textContent = 'Замінити мої дані'; };
+  $('#bf', sh).onchange = (e) => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { txt.value = String(rd.result).slice(0, 2e6); check(txt.value); }; rd.onerror = () => { err.textContent = 'Не вдалося прочитати файл.'; }; rd.readAsText(f); };
+  txt.oninput = () => { ready = null; err.textContent = ''; txt.classList.remove('bad'); $('#bsum', sh).innerHTML = ''; $('#bok', sh).textContent = 'Перевірити'; };
+  $('[data-close]', sh).onclick = () => closeSheet();
+  $('#bok', sh).onclick = () => {
+    if (!ready) { if (!txt.value.trim()) { err.textContent = 'Оберіть файл або вставте текст копії.'; txt.classList.add('bad'); sfx.no(); return; } check(txt.value); return; }
+    S = ready; save(); closeSheet(); applyOpts(); sfx.win(); toast('Дані відновлено', 'check'); setTimeout(() => { stack.splice(0).forEach((s) => s.el.remove()); startApp(false); }, 300);
+  };
+}
+
+/* ---------- MORE (hub) ---------- */
+SCREENS.more = {
+  tabs: true,
+  render(el) {
+    const rows = [['profile', 'user', 'Профіль і налаштування', `${esc(S.user.name || 'Проксі')} · ${esc(rankOf())}`], ['academy', 'book', 'Академія', `${Object.keys(S.lessons).length} із ${D.mechanics.length} уроків і вікторина`], ['backup', 'download', 'Резервна копія', 'Експорт та імпорт моїх даних'], ['about', 'info', 'Про проєкт і джерела', 'Неофіційний фанатський проєкт']];
+    el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Досьє Ерідо</div><div class="h-disp" style="margin-top:6px">Ще</div></div></div><div class="mypad"><div class="mrows">${rows.map((r) => `<button class="card mrow" data-k="${r[0]}"><span class="mic">${ico(r[1])}</span><span class="tx"><b>${r[2]}</b><small>${r[3]}</small></span>${ico('next')}</button>`).join('')}</div></div><div class="disc">Неофіційний фанатський навчальний проєкт. Не пов'язаний з HoYoverse.</div>`;
+    on(el, 'click', '.mrow', (e, b) => { const k = b.dataset.k; if (k === 'profile' || k === 'academy') go(k, {}, { dir: 'root' }); else if (k === 'backup') openBackup(); else { go('profile', {}, { dir: 'root' }); setTimeout(() => { const ab = $('#ab'); ab && ab.click(); }, 450); } });
+  },
+};
+
 /* ===== SCREENS B: universe, article, academy, lesson, quiz ===== */
 const GROUP = (t) => /поліц|державн|військов|міська служба|корпоративного/.test(t) ? 'gov' : /агенці|сервісна|будівельна|виробнича/.test(t) ? 'biz' : /банда|злодій/.test(t) ? 'street' : /музична|айдол|форум/.test(t) ? 'pop' : 'other';
 const GCOL = { gov: '#4FE3FF', biz: '#DFFF2E', street: '#FF4D2E', pop: '#FF5CB8', other: '#8C7CFF' };
@@ -1748,8 +2248,10 @@ SCREENS.squad = {
       $('#ck', el).innerHTML = r.checks.map((c, i) => `<div class="check ${c[1] ? 'ok' : ''} rise" style="--i:${i}"><span class="c">${c[1] ? ico('check') : ''}</span><span style="flex:1"><b style="font-weight:600">${c[0]}</b><div class="muted" style="font-size:12.5px;margin-top:2px">${c[2]}</div></span></div>`).join('');
     };
     const pick = (slot) => {
-      const sel = S.squad;
-      const sh = openSheet(`<div class="eyebrow" style="margin-bottom:12px">Слот ${slot + 1} · обери Агента</div><div style="display:grid;gap:8px">${AG.map((a) => { const inS = sel.includes(a.id) && sel[slot] !== a.id; return `<button class="mate" data-p="${a.id}" ${inS ? 'disabled style="opacity:.4"' : ''}><span class="pic">${poster(a)}</span><span style="flex:1;min-width:0"><b style="font:700 18px var(--f-display);text-transform:uppercase;display:block">${esc(a.name_ua)}</b><small class="muted">${esc(elOf(a).ua)} · ${esc(specUa(a))}${inS ? ' · вже у складі' : ''}</small></span>${sel[slot] === a.id ? ico('check') : ''}</button>`; }).join('')}</div>`);
+      const sel = S.squad; let onlyOwn = ownCount() > 0;
+      const list = () => { const L = AG.filter((a) => !onlyOwn || S.own[a.id] || sel[slot] === a.id).sort((x, y) => (S.own[y.id] ? 1 : 0) - (S.own[x.id] ? 1 : 0)); return L.map((a) => { const inS = sel.includes(a.id) && sel[slot] !== a.id; return `<button class="mate" data-p="${a.id}" ${inS ? 'disabled style="opacity:.4"' : ''}><span class="pic">${poster(a)}</span><span style="flex:1;min-width:0"><b style="font:700 18px var(--f-display);text-transform:uppercase;display:block">${esc(a.name_ua)}</b><small class="muted">${esc(elOf(a).ua)} · ${esc(specUa(a))}${S.own[a.id] ? ' · є в мене' : ''}${inS ? ' · вже у складі' : ''}</small></span>${sel[slot] === a.id ? ico('check') : ''}</button>`; }).join('') || emptyState('Нікого не позначено', 'Познач агентів у розділі «Моє» або вибери «Усі»'); };
+      const sh = openSheet(`<div class="eyebrow" style="margin-bottom:12px">Слот ${slot + 1} · обери Агента</div><div class="row" style="gap:8px;margin-bottom:12px"><button class="chip ${onlyOwn ? 'on' : ''}" data-f="own" aria-pressed="${onlyOwn}">Мої</button><button class="chip ${onlyOwn ? '' : 'on'}" data-f="all" aria-pressed="${!onlyOwn}">Усі</button></div><div style="display:grid;gap:8px" id="pl">${list()}</div>`);
+      on(sh, 'click', '[data-f]', (e, c) => { onlyOwn = c.dataset.f === 'own'; $$('[data-f]', sh).forEach((x) => { x.classList.toggle('on', x === c); x.setAttribute('aria-pressed', x === c); }); $('#pl', sh).innerHTML = list(); });
       on(sh, 'click', '[data-p]', (e, b) => { S.squad[slot] = b.dataset.p; save(); sfx.ok(); vib(14); closeSheet(); render(); if (S.squad.every(Boolean)) award('cmd'); });
     };
     on(el, 'click', '[data-x]', (e, x) => { e.stopPropagation(); S.squad[+x.dataset.x] = null; save(); sfx.tap(); render(); });
@@ -1848,6 +2350,7 @@ function buildShell() {
   });
   $('#scrim').onclick = () => closeSheet();
   document.addEventListener('pointerdown', (e) => { const b = e.target.closest('.btn'); if (b) ripple(e, b); const c = e.target.closest('button,.slot,.acc'); if (c && !c.classList.contains('t') && !c.classList.contains('node')) sfx.tap(); }, { passive: true });
+  document.addEventListener('keydown', (e) => { if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '') && !$('#ovl').classList.contains('show') && S.user.done) { e.preventDefault(); openSearch(); } });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { if ($('#sheet').classList.contains('show')) closeSheet(); else if ($('#ovl').classList.contains('show')) closeSearch(); else back(); } });
   const clock = () => { const d = new Date(); const s = $('#clock'); if (s) s.textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }; clock(); setInterval(clock, 20000);
 }
@@ -1909,6 +2412,7 @@ function boot() {
 function init() {
   const root = document.documentElement;
   if (STATIC) root.classList.add('static');
+  if (/[?&]phone\b/.test(location.search) || location.hash === '#wire') root.classList.add('mock');
   buildShell(); buildRails(); applyOpts(); boot();
   if (location.hash === '#wire') document.body.classList.add('wire');
 }
