@@ -506,8 +506,7 @@ body{overflow:auto;background:var(--ink)}
 @media (min-width:500px) and (min-height:700px){.device{height:min(var(--dh),calc(100% - 30px))}}
 @media (max-width:499px),(max-height:699px){.stage{min-height:0;height:100dvh}}
 
-.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 3%;z-index:1;opacity:0;transition:opacity .35s ease}
-.hasp .pimg{opacity:1}
+.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 3%;z-index:1}
 .wire .pimg{display:none}
 .tag.soon{background:#2A2E38;color:#F0B73C;border-color:#F0B73C55}
 .hasp svg .fig{display:none}
@@ -805,7 +804,6 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
   html:not(.mock) .tabbar .pill{left:12px;right:12px;width:auto;top:96px;bottom:auto;height:56px;transform:translateY(calc(var(--i,0) * 56px))}
   html:not(.mock) .view.has-tabs{padding-bottom:40px}
   html:not(.mock) .view>*:not(.cta-bar){max-width:1040px;margin-left:auto;margin-right:auto}
-  html:not(.mock) .view>*[style*="margin:0 20px"]{margin-left:auto!important;margin-right:auto!important;width:calc(100% - 40px)}
   html:not(.mock) .view>.topbar{max-width:none;padding-left:max(20px,calc((100% - 1040px)/2 + 20px));padding-right:max(20px,calc((100% - 1040px)/2 + 20px))}
   html:not(.mock) .view.has-cta>*:not(.cta-bar){width:100%}
   html:not(.mock) .view.as-panel>*:not(.cta-bar){max-width:none;margin-left:0;margin-right:0}
@@ -846,39 +844,6 @@ select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50
 .acard .fav ~ .ownb{top:46px;right:11px}
 .sec-h button{min-height:44px;padding:0 2px;display:inline-flex;align-items:center}
 .search input{align-self:stretch}
-
-/* ---------- gear icons ---------- */
-.gic{position:relative;display:inline-grid;place-items:center;width:46px;height:46px;flex:none;border-radius:11px;overflow:hidden;background:hsl(var(--h) 30% 13%);border:1px solid hsl(var(--h) 40% 30%)}
-.gic.sig{border-color:var(--acid)}
-.gic .emb{width:100%;height:100%}
-.gic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3px;opacity:0;transition:opacity .3s}
-.gic.hasp img{opacity:1}.gic.hasp .emb{opacity:0}
-.gic .gnum{position:absolute;left:0;top:0;min-width:18px;padding:1px 5px;background:var(--acid);color:var(--acidink);font:700 10px/16px var(--f-mono);font-style:normal;border-radius:0 0 8px 0;z-index:2}
-.gic.sm{position:absolute;right:-4px;bottom:-4px;width:24px;height:24px;border-radius:7px;border-width:1.5px;border-color:var(--ink2);box-shadow:0 0 0 1px hsl(var(--h) 40% 40%)}
-.gico{position:relative;width:46px;height:46px;flex:none}
-.gi{grid-template-columns:46px minmax(0,1fr)!important;gap:14px!important}
-.glist{display:grid;gap:10px}
-.gcard{padding:14px;display:grid;gap:12px}
-.gag{display:flex;flex-wrap:wrap;gap:6px}
-.gag .chip{padding:6px 11px;min-height:36px;font-size:12.5px}
-@media (min-width:1024px){html:not(.mock) .glist{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
-/* ---------- account ---------- */
-.card.acct{padding:16px;display:grid;gap:14px}
-.gbtn{min-height:50px;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;color:#1F1F1F;border:1px solid #747775;border-radius:999px;font:600 15px var(--f-body);transition:background .15s,transform .15s}
-.gbtn:hover{background:#F2F2F2}.gbtn:active{transform:scale(.98)}.gbtn:disabled{opacity:.5}
-.gav{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none;background:var(--ink3);border:1px solid var(--line2)}
-.gav.ph{display:grid;place-items:center;font:700 20px var(--f-display);color:var(--acid)}
-.accs{display:flex;align-items:center;gap:8px;font:500 13px var(--f-body);color:var(--soft)}
-.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--good)}.dot.er{background:var(--bad)}.dot.sy{background:var(--amber);animation:blink 1s infinite}
-@keyframes blink{50%{opacity:.35}}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row2 .btn{min-height:48px}
-.lnk{justify-self:start;min-height:44px;padding:0 2px;color:var(--muted);font:500 13px var(--f-body);text-decoration:underline;text-underline-offset:3px}
-.lnk:hover{color:var(--bad)}
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cmp>div{padding:12px;border:1px solid var(--line2);border-radius:12px;background:var(--ink3);display:grid;gap:4px}.cmp small{font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.cmp b{font:600 13px var(--f-body);line-height:1.4}
-#acc:empty{display:none}
-.gbtn svg{margin:0!important;flex:none}
-.row2 .btn{padding:0 12px;font-size:14px;justify-content:center}
 </style>
 </head><body><div class="stage" id="stage">
 <aside class="rail" id="railL"></aside>
@@ -918,7 +883,7 @@ let S = S0();
 function load() {
   try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); S = Object.assign(S0(), o); S.opts = Object.assign(S0().opts, o.opts || {}); S.user = Object.assign(S0().user, o.user || {}); S.quiz = Object.assign(S0().quiz, o.quiz || {}); } } catch (e) { }
 }
-function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } window.__saved && window.__saved(); }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
 load();
 
 /* ---------- data helpers ---------- */
@@ -1011,10 +976,8 @@ function rng(seed) { let h = 2166136261; for (const c of String(seed)) { h ^= c.
 let PU = 0;
 /* Власні портрети: поклади файл portraits/<id>.webp (або .png/.jpg) поруч з index.html */
 const NOPIC = new Set(); window.__nopic = (id) => NOPIC.add(id);
-const PCH = (id, full) => (full ? [] : [`portraits/t/${id}.webp`]).concat([`portraits/${id}.webp`, `portraits/${id}.png`, `portraits/${id}.jpg`]);
-window.__pn = (im) => { const L = im.dataset.c.split('|'); const k = (+im.dataset.k || 0) + 1; if (k < L.length) { im.dataset.k = k; im.src = L[k]; } else { window.__nopic(im.dataset.id); im.remove(); } };
-const portraitImg = (a, full) => { if (NOPIC.has(a.id)) return ''; const L = PCH(a.id, full); return `<img class="pimg" src="${L[0]}" data-id="${a.id}" data-c="${L.join('|')}" alt="" ${full ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__pn(this)">`; };
-function poster(a, full) {
+const portraitImg = (a) => NOPIC.has(a.id) ? '' : `<img class="pimg" src="portraits/${a.id}.webp" alt="" loading="lazy" decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="var t=+(this.dataset.t||0);if(t===0){this.dataset.t=1;this.src='portraits/${a.id}.png'}else if(t===1){this.dataset.t=2;this.src='portraits/${a.id}.jpg'}else{window.__nopic('${a.id}');this.remove()}">`;
+function poster(a) {
   const r = rng(a.id), el = elOf(a), c = el.c, u = 'p' + (++PU);
   const hairKinds = ['bob', 'long', 'spike', 'hood', 'bun'];
   const hair = hairKinds[Math.floor(r() * hairKinds.length)];
@@ -1059,9 +1022,9 @@ ${bun}<path d="${hairPath}" fill="#0C0D10" stroke="${c}" stroke-width="2.4" stro
 <path d="M144 256q6 4 12 0" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
 </g>
 <g class="dec" transform="translate(218 ${128 + Math.round(r() * 60)}) rotate(8)"><rect width="52" height="22" fill="${c}"/><text x="26" y="15.5" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" font-size="12" fill="#10130A">${stamp}</text></g>
-</svg>${portraitImg(a, full)}`;
+</svg>${portraitImg(a)}`;
 }
-const posterBox = (a, cls = '', full = false) => `<div class="poster ${cls}">${poster(a, full)}</div>`;
+const posterBox = (a, cls = '') => `<div class="poster ${cls}">${poster(a)}</div>`;
 
 function mascot(size = 120) {
   return `<svg class="mascot" width="${size}" height="${size}" viewBox="0 0 120 120" aria-hidden="true">
@@ -1192,7 +1155,7 @@ const V = () => $('#views');
 const stack = [];
 let busy = false;
 const TABS = [['home', 'Головна', 'home'], ['agents', 'Агенти', 'agents'], ['my', 'Моє', 'my'], ['universe', 'Всесвіт', 'globe'], ['more', 'Ще', 'more']];
-const TABOF = { academy: 'more', profile: 'more', gear: 'more' };
+const TABOF = { academy: 'more', profile: 'more' };
 const isDesktop = () => !document.documentElement.classList.contains('mock') && window.matchMedia('(min-width:1024px)').matches;
 const syncPanel = () => { const t = stack[stack.length - 1]; const v = V(); if (v) v.classList.toggle('panel-open', !!(t && t.el.classList.contains('as-panel'))); };
 const SCREENS = {};
@@ -1392,10 +1355,10 @@ function deepOverview(a) {
 
 function deepBuild(a) {
   const g = GUIDES[a.id];
-  const row = (i, n, note, flag, flagText, kind) => { const ss = kind === 'dd' ? discSets(n) : [n]; return `<div class="gi ${flag ? 'sig' : ''}"><span class="gico">${gearIcon(kind, ss[0], { sig: flag, n: i + 1 })}${ss[1] ? gearIcon(kind, ss[1], { sm: 1 }) : ''}</span><div><b>${esc(n)}</b>${flag ? `<em>${flagText}</em>` : ''}<p>${esc(note)}</p></div></div>`; };
+  const row = (i, n, note, flag, flagText) => `<div class="gi ${flag ? 'sig' : ''}"><span class="gn">${i + 1}</span><div><b>${esc(n)}</b>${flag ? `<em>${flagText}</em>` : ''}<p>${esc(note)}</p></div></div>`;
   const stars = (n) => '★'.repeat(n) + '<span class="off">' + '★'.repeat(5 - n) + '</span>';
-  return `<div><div class="eyebrow" style="margin-bottom:12px">W-Engine, від кращого до гіршого</div><div class="gl">${g.wengines.map(([n, note, sig], i) => row(i, n, note, sig, 'сигнатурний', 'we')).join('')}</div></div>
-  <div><div class="eyebrow" style="margin-bottom:12px">Диски драйву</div><div class="gl">${g.discs.map(([n, note, best], i) => row(i, n, note, best, 'найкращий', 'dd')).join('')}</div></div>
+  return `<div><div class="eyebrow" style="margin-bottom:12px">W-Engine, від кращого до гіршого</div><div class="gl">${g.wengines.map(([n, note, sig], i) => row(i, n, note, sig, 'сигнатурний')).join('')}</div></div>
+  <div><div class="eyebrow" style="margin-bottom:12px">Диски драйву</div><div class="gl">${g.discs.map(([n, note, best], i) => row(i, n, note, best, 'найкращий')).join('')}</div></div>
   <div><div class="eyebrow" style="margin-bottom:12px">Головні характеристики</div><div class="gmain"><div><small>Слот 4</small><b>${esc(g.mains.s4)}</b></div><div><small>Слот 5</small><b>${esc(g.mains.s5)}</b></div><div><small>Слот 6</small><b>${esc(g.mains.s6)}</b></div></div>
     <div class="gsubs"><small>Другорядні, за пріоритетом</small>${g.subs.map((s, i) => `<span class="tag">${i + 1}. ${esc(s)}</span>`).join('')}</div>
     <div class="note" style="margin-top:12px"><b style="color:var(--soft)">Орієнтир:</b> ${esc(g.target)}</div></div>
@@ -1440,9 +1403,8 @@ SCREENS.onboard = {
     const put = (html, bind) => { ob.innerHTML = `<div class="v-in-fwd" style="display:grid;gap:22px">${html}</div>`; steps.forEach((s, i) => s.classList.toggle('on', i <= step)); bind && bind(); };
     const s0 = () => put(`<div style="display:flex;gap:14px;align-items:flex-end">${mascot(104)}<div class="bubble">Привіт! Я <b>Ехо</b>, бангбу-гід Інтер-Нот. Допоможу розібратись у Нью-Ерідо. Як тебе звати, Проксі?</div></div>
       <div><div class="eyebrow" style="margin-bottom:10px">Позивний</div><input class="big" id="nm" maxlength="14" placeholder="Напр. ФАЕТОН" value="${esc(st.name)}" autocomplete="off"></div>
-      <div id="acc"></div>
       <button class="btn block" id="n0">Далі ${ico('next')}</button>`, () => {
-      const i = $('#nm', el); accMount($('#acc', el)); ACC.onUser = (u) => { if (i.isConnected && !i.value) i.value = (u.displayName || '').split(' ')[0].toUpperCase().slice(0, 14); }; $('#n0', el).onclick = () => { st.name = i.value.trim() || 'Проксі'; step = 1; sfx.nav(); s1(); };
+      const i = $('#nm', el); $('#n0', el).onclick = () => { st.name = i.value.trim() || 'Проксі'; step = 1; sfx.nav(); s1(); };
       i.addEventListener('keydown', (e) => { if (e.key === 'Enter') $('#n0', el).click(); });
     });
     const LV = [['new', 'Новачок', 'Нічого не знаю про гру. Веди мене по порядку', 'tv'], ['mid', 'Гравець', 'Знаю основи, хочу гайди та сюжет', 'bolt'], ['vet', 'Ветеран', 'Усе відкрито — одразу до справи', 'trophy']];
@@ -1475,7 +1437,7 @@ SCREENS.home = {
     el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Інтер-Нот · Нью-Ерідо</div><div class="h-disp" style="font-size:27px;margin-top:6px">Привіт, ${esc(S.user.name || 'Проксі')}</div></div><button class="icon-btn" id="hs" aria-label="Пошук">${ico('search')}</button></div>
     <div class="ticker rise" style="--i:0"><div class="tk">${tick}${tick}</div></div>
     <div style="height:18px"></div>
-    <button class="hero-card rise" style="--i:1;display:block;width:calc(100% - 40px);text-align:left" id="hero">${posterBox(ag, '', true)}<div class="shade"></div><span class="tag acid bdg">Агент дня</span><span class="no">${String(AG.indexOf(ag) + 1).padStart(2, '0')}/${AG.length}</span>
+    <button class="hero-card rise" style="--i:1;display:block;width:calc(100% - 40px);text-align:left" id="hero">${posterBox(ag)}<div class="shade"></div><span class="tag acid bdg">Агент дня</span><span class="no">${String(AG.indexOf(ag) + 1).padStart(2, '0')}/${AG.length}</span>
       <div class="info"><div class="row">${tagEl(ag)}<span class="tag">${esc(specUa(ag))}</span></div><div class="h-disp h1 glitch" data-t="${esc(ag.name_ua)}" style="font-size:42px">${esc(ag.name_ua)}</div><div class="muted" style="font-size:14px">${esc(ag.tagline_ua)}</div></div></button>
     <div class="rise" style="--i:2;padding:14px 20px 0"><button class="btn block ghost" id="tlb">${ico('trophy')} Тір-лист агентів · патч ${esc(TIERMETA.patch)}</button></div>
     <div class="sec-h rise" style="--i:2"><div class="h-disp">Розділи</div></div>
@@ -1566,7 +1528,7 @@ SCREENS.agent = {
   render(el, p, inst) {
     const a = agent(p.id) || AG[0], c = elOf(a).c, idx = AG.indexOf(a); let tab = p.tab || 0;
     const fav = S.favs.includes(a.id), own = !!S.own[a.id];
-    el.innerHTML = `<div class="dhero">${posterBox(a, '', true)}<div class="shade"></div><div class="tools"><button class="icon-btn" id="bk" aria-label="Назад">${ico('back')}</button><div class="row"><button class="icon-btn" id="sh" aria-label="Поділитися">${ico('share')}</button><button class="icon-btn" id="fv" aria-label="Улюблений">${ico('heart', 'heart' + (fav ? ' on' : ''))}</button></div></div></div>
+    el.innerHTML = `<div class="dhero">${posterBox(a)}<div class="shade"></div><div class="tools"><button class="icon-btn" id="bk" aria-label="Назад">${ico('back')}</button><div class="row"><button class="icon-btn" id="sh" aria-label="Поділитися">${ico('share')}</button><button class="icon-btn" id="fv" aria-label="Улюблений">${ico('heart', 'heart' + (fav ? ' on' : ''))}</button></div></div></div>
     <div class="dname"><div class="row" style="flex-wrap:wrap"><span class="tag ${a.rarity === 'S' ? 'acid' : ''}">${a.rarity}-ранг</span>${tagEl(a)}<span class="tag">${esc(specUa(a))}</span>${TIER[a.id] ? `<span class="tag tier ${tierCls(TIER[a.id].t)}">${tierName(TIER[a.id].t)}</span>` : ''}${a.released === false ? '<span class="tag soon">Скоро</span>' : ''}</div>
       <h1 class="h-disp h1 rise" style="--i:1;text-shadow:0 0 30px ${c}55">${esc(a.name_ua)}</h1><div class="mono muted" style="font-size:12px;letter-spacing:.1em">${esc(a.name_en)} · ${esc(facShort(a))}</div></div>
     <div class="tabs ${GUIDES[a.id] ? 't5' : ''}" id="tabs">${(GUIDES[a.id] ? ['Історія', 'Огляд', 'Збірка', 'Команди', 'Навички'] : ['Історія', 'Гайд', 'Збірка']).map((n, i) => `<button class="${i === 0 ? 'on' : ''}">${n}</button>`).join('')}<span class="ul"></span></div>
@@ -1623,51 +1585,6 @@ SCREENS.agent = {
     hero.addEventListener('pointerup', (e) => { if (x0 == null) return; const dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 70) swap(dx < 0 ? 1 : -1); });
     tilt(el); show(tab, false);
     if (STATIC && p.tab) show(p.tab, false);
-  },
-};
-
-/* ---------- GEAR: іконки W-Engine і дисків драйву ----------
-   Поклади файл gear/we/<slug>.webp (або .png/.jpg) для W-Engine і gear/dd/<slug>.webp для набору дисків.
-   Поки файлу немає, показується власна згенерована емблема. */
-const gslug = (n) => String(n).toLowerCase().replace(/['’`]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-const ghue = (n) => { let h = 7; for (const c of String(n)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 360; };
-const gini = (n) => { const w = String(n).replace(/[^A-Za-z ]/g, ' ').split(/\s+/).filter((x) => x.length > 1 && !/^(of|the|and)$/i.test(x)); return (w.length > 1 ? w[0][0] + w[1][0] : (w[0] || n).slice(0, 2)).toUpperCase(); };
-window.__gn = (im) => { const L = im.dataset.c.split('|'), k = (+im.dataset.k || 0) + 1; if (k < L.length) { im.dataset.k = k; im.src = L[k]; } else im.remove(); };
-function gearIcon(kind, name, o = {}) {
-  const sl = gslug(name), dir = kind === 'we' ? 'gear/we/' : 'gear/dd/', L = ['webp', 'png', 'jpg'].map((x) => dir + sl + '.' + x), h = ghue(name);
-  const emb = kind === 'we'
-    ? `<svg class="emb" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l17 10v20L24 44 7 34V14z" fill="hsl(${h} 40% 22%)" stroke="hsl(${h} 70% 62%)" stroke-width="1.6"/><path d="M14 33L33 14l1.5 4.5L19 34z" fill="hsl(${h} 70% 70%)" opacity=".9"/><text x="24" y="40" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" font-size="9" fill="hsl(${h} 30% 90%)">${gini(name)}</text></svg>`
-    : `<svg class="emb" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="hsl(${h} 35% 14%)" stroke="hsl(${h} 70% 62%)" stroke-width="1.6"/><circle cx="24" cy="24" r="14" fill="none" stroke="hsl(${h} 50% 40%)" stroke-width="1"/><circle cx="24" cy="24" r="9" fill="none" stroke="hsl(${h} 50% 40%)" stroke-width="1"/><circle cx="24" cy="24" r="4" fill="#0C0D10" stroke="hsl(${h} 70% 62%)"/><text x="24" y="43.5" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="700" font-size="8.5" fill="hsl(${h} 30% 92%)">${gini(name)}</text></svg>`;
-  return `<span class="gic ${kind} ${o.sig ? 'sig' : ''} ${o.sm ? 'sm' : ''}" style="--h:${h}">${emb}<img src="${L[0]}" data-c="${L.join('|')}" alt="" loading="lazy" decoding="async" onload="this.parentNode.classList.add('hasp')" onerror="__gn(this)">${o.n ? `<i class="gnum">${o.n}</i>` : ''}</span>`;
-}
-/* набори дисків із рядка «Moonlight Lullaby (4) + Astral Voice (2)» */
-const discSets = (s) => String(s).split(/\s*\+\s*|\s+або\s+/).map((p) => p.replace(/\s*\(\d\)\s*$/, '').trim()).filter(Boolean);
-function gearIndex() {
-  const we = {}, dd = {};
-  for (const a of AG) {
-    const g = GUIDES[a.id]; if (!g) continue;
-    (g.wengines || []).forEach(([n, note, sig], i) => { const e = we[n] = we[n] || { n, a: [] }; if (!e.a.some((x) => x.id === a.id)) e.a.push({ id: a.id, sig, rank: i + 1 }); });
-    (g.discs || []).forEach(([n, note, best], i) => discSets(n).forEach((s) => { const e = dd[s] = dd[s] || { n: s, a: [] }; if (!e.a.some((x) => x.id === a.id)) e.a.push({ id: a.id, sig: best, rank: i + 1 }); }));
-  }
-  const srt = (o) => Object.values(o).sort((x, y) => y.a.length - x.a.length || x.n.localeCompare(y.n));
-  return { we: srt(we), dd: srt(dd) };
-}
-SCREENS.gear = {
-  render(el) {
-    const G = gearIndex(); let kind = S._gk || 'we', q = '';
-    el.innerHTML = `<div class="topbar"><button class="icon-btn" id="bk" aria-label="Назад">${ico('back')}</button><div class="ttl"><div class="eyebrow">Збірки агентів</div><div class="h-disp" style="margin-top:6px">Спорядження</div></div></div>
-    <div class="mypad"><div id="gseg"></div>
-    <label class="search" style="margin:14px 0">${ico('search')}<input id="gq" placeholder="Знайти за назвою" autocomplete="off" aria-label="Пошук спорядження"></label>
-    <div class="glist" id="gl"></div></div>`;
-    const draw = () => {
-      const L = G[kind].filter((x) => !q || x.n.toLowerCase().includes(q));
-      $('#gl', el).innerHTML = L.length ? L.map((x) => `<div class="card gcard"><div class="row" style="gap:12px;align-items:center">${gearIcon(kind, x.n)}<div style="min-width:0"><b class="gnm">${esc(x.n)}</b><small class="muted">${kind === 'we' ? 'Рекомендують' : 'Використовують'}: ${x.a.length} ${x.a.length === 1 ? 'агент' : 'агентів'}</small></div></div><div class="gag">${x.a.slice(0, 8).map((r) => { const a = agent(r.id); return a ? `<button class="chip ${r.sig ? 'on' : ''}" data-agent="${a.id}" title="${r.sig ? (kind === 'we' ? 'сигнатурний' : 'найкращий') : '№' + r.rank}">${esc(shortName(a))}</button>` : ''; }).join('')}${x.a.length > 8 ? `<span class="muted" style="font-size:12px;align-self:center">+${x.a.length - 8}</span>` : ''}</div></div>`).join('') : '<div class="note">Нічого не знайдено.</div>';
-    };
-    $('#gseg', el).appendChild(segment([`W-Engine · ${G.we.length}`, `Диски драйву · ${G.dd.length}`], kind === 'we' ? 0 : 1, (i) => { kind = S._gk = i ? 'dd' : 'we'; sfx.tap(); draw(); }));
-    on(el, 'click', '[data-agent]', (e, b) => openAgent(b.dataset.agent));
-    $('#gq', el).oninput = (e) => { q = e.target.value.trim().toLowerCase(); draw(); };
-    $('#bk', el).onclick = () => back();
-    draw();
   },
 };
 
@@ -2157,9 +2074,9 @@ function openImport() {
 SCREENS.more = {
   tabs: true,
   render(el) {
-    const rows = [['profile', 'user', 'Профіль і налаштування', `${esc(S.user.name || 'Проксі')} · ${esc(rankOf())}`], ['academy', 'book', 'Академія', `${Object.keys(S.lessons).length} із ${D.mechanics.length} уроків і вікторина`], ['gear', 'disc', 'Спорядження', 'W-Engine і диски драйву з іконками'], ['backup', 'download', 'Резервна копія', 'Експорт та імпорт моїх даних'], ['about', 'info', 'Про проєкт і джерела', 'Неофіційний фанатський проєкт']];
+    const rows = [['profile', 'user', 'Профіль і налаштування', `${esc(S.user.name || 'Проксі')} · ${esc(rankOf())}`], ['academy', 'book', 'Академія', `${Object.keys(S.lessons).length} із ${D.mechanics.length} уроків і вікторина`], ['backup', 'download', 'Резервна копія', 'Експорт та імпорт моїх даних'], ['about', 'info', 'Про проєкт і джерела', 'Неофіційний фанатський проєкт']];
     el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Досьє Ерідо</div><div class="h-disp" style="margin-top:6px">Ще</div></div></div><div class="mypad"><div class="mrows">${rows.map((r) => `<button class="card mrow" data-k="${r[0]}"><span class="mic">${ico(r[1])}</span><span class="tx"><b>${r[2]}</b><small>${r[3]}</small></span>${ico('next')}</button>`).join('')}</div></div><div class="disc">Неофіційний фанатський навчальний проєкт. Не пов'язаний з HoYoverse.</div>`;
-    on(el, 'click', '.mrow', (e, b) => { const k = b.dataset.k; if (k === 'profile' || k === 'academy') go(k, {}, { dir: 'root' }); else if (k === 'gear') go('gear'); else if (k === 'backup') openBackup(); else { go('profile', {}, { dir: 'root' }); setTimeout(() => { const ab = $('#ab'); ab && ab.click(); }, 450); } });
+    on(el, 'click', '.mrow', (e, b) => { const k = b.dataset.k; if (k === 'profile' || k === 'academy') go(k, {}, { dir: 'root' }); else if (k === 'backup') openBackup(); else { go('profile', {}, { dir: 'root' }); setTimeout(() => { const ab = $('#ab'); ab && ab.click(); }, 450); } });
   },
 };
 
@@ -2301,152 +2218,6 @@ SCREENS.quiz = {
   },
 };
 
-/* ---------- ACCOUNT: вхід через Google (Firebase Auth) + хмарна синхронізація (Firestore) ----------
-   Конфіг лежить у firebase-config.js поруч з index.html (window.ERIDU_FIREBASE = {...}).
-   Без нього блок акаунта не показується, застосунок працює локально, як раніше. */
-const FBV = '10.12.2', SYNKEY = 'eridu:sync', ACCFLAG = 'eridu:acc';
-const ACC = { cfg: null, user: null, db: null, auth: null, hosts: new Set(), status: '', at: 0, err: '', busy: false, applying: false, loading: null, timer: 0, last: 0 };
-const lsGet = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
-const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { } };
-const syn = () => { try { return JSON.parse(lsGet(SYNKEY)) || {}; } catch (e) { return {}; } };
-const setSyn = (o) => lsSet(SYNKEY, JSON.stringify(Object.assign(syn(), o)));
-window.__saved = () => { if (ACC.applying) return; setSyn({ rev: Date.now() }); if (ACC.user) accSchedule(); };
-
-const G_LOGO = '<svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
-const accOn = () => !!ACC.cfg;
-
-/* --- завантаження SDK лише коли потрібно --- */
-const loadJs = (src) => new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.async = true; s.onload = ok; s.onerror = () => no(new Error('load ' + src)); document.head.appendChild(s); });
-function fbLoad() {
-  if (ACC.auth) return Promise.resolve();
-  if (ACC.loading) return ACC.loading;
-  ACC.loading = (async () => {
-    if (!window.firebase) { const b = `https://www.gstatic.com/firebasejs/${FBV}/`; await loadJs(b + 'firebase-app-compat.js'); await Promise.all([loadJs(b + 'firebase-auth-compat.js'), loadJs(b + 'firebase-firestore-compat.js')]); }
-    const app = firebase.apps && firebase.apps.length ? firebase.app() : firebase.initializeApp(ACC.cfg);
-    ACC.auth = firebase.auth(app); ACC.db = firebase.firestore(app);
-    ACC.auth.onAuthStateChanged((u) => { ACC.user = u || null; if (u) { lsSet(ACCFLAG, '1'); accSync(); } accDraw(); if (u && ACC.onUser) ACC.onUser(u); });
-    try { await ACC.auth.getRedirectResult(); } catch (e) { ACC.err = accErr(e); }
-  })().catch((e) => { ACC.loading = null; throw e; });
-  return ACC.loading;
-}
-function accInit() {
-  const go_ = () => { if (!window.ERIDU_FIREBASE || !window.ERIDU_FIREBASE.apiKey) return; ACC.cfg = window.ERIDU_FIREBASE; accDraw(); if (lsGet(ACCFLAG) === '1') fbLoad().catch(() => { }); };
-  if (window.ERIDU_FIREBASE) { go_(); return; }
-  const s = document.createElement('script'); s.src = 'firebase-config.js'; s.onload = go_; s.onerror = () => { }; document.head.appendChild(s);
-}
-document.addEventListener('visibilitychange', () => { if (!document.hidden && ACC.user && Date.now() - ACC.last > 20000) accSync(); });
-
-function accErr(e) {
-  const c = (e && e.code) || '', m = (e && e.message) || '';
-  if (c === 'auth/popup-closed-by-user' || c === 'auth/cancelled-popup-request') return '';
-  if (c === 'auth/unauthorized-domain') return 'Цей сайт не доданий у Firebase (Authentication → Settings → Authorized domains).';
-  if (c === 'auth/network-request-failed' || /load https/.test(m) || /offline|unavailable/i.test(m)) return 'Немає зʼєднання з інтернетом. Спробуйте пізніше.';
-  if (c === 'permission-denied' || /permission/i.test(m)) return 'Хмара не дозволила доступ. Перевірте правила Firestore.';
-  if (c === 'auth/operation-not-allowed') return 'Вхід через Google не увімкнений у Firebase.';
-  return 'Не вдалося виконати дію. Спробуйте ще раз.';
-}
-
-/* --- вхід / вихід --- */
-async function accSignIn() {
-  ACC.err = ''; accDraw();
-  try {
-    await fbLoad();
-    const prov = new firebase.auth.GoogleAuthProvider(); prov.setCustomParameters({ prompt: 'select_account' });
-    const standalone = window.matchMedia && matchMedia('(display-mode: standalone)').matches;
-    try { if (standalone && /iPhone|iPad|iPod/.test(navigator.userAgent)) { await ACC.auth.signInWithRedirect(prov); return; } await ACC.auth.signInWithPopup(prov); }
-    catch (e) { if (e && (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment')) { await ACC.auth.signInWithRedirect(prov); return; } throw e; }
-  } catch (e) { ACC.err = accErr(e); if (ACC.err) toast(ACC.err, 'info'); accDraw(); }
-}
-async function accSignOut() { try { await ACC.auth.signOut(); } catch (e) { } ACC.user = null; ACC.status = ''; lsSet(ACCFLAG, ''); setSyn({ uid: null, base: 0 }); accDraw(); toast('Ви вийшли. Дані лишились на цьому пристрої', 'check'); }
-
-/* --- дані --- */
-const isFresh = (s) => !Object.keys(s.own || {}).length && !(s.goals || []).length && !(s.pulls || []).length && !(s.favs || []).length && !Object.keys(s.lessons || {}).length && (s.xp || 0) <= 10 && !(s.squad || []).some(Boolean);
-function mergeState(a, b) {
-  const m = JSON.parse(JSON.stringify(a));
-  m.xp = Math.max(a.xp || 0, b.xp || 0);
-  m.favs = [...new Set([...(a.favs || []), ...(b.favs || [])])];
-  m.own = Object.assign({}, b.own); for (const [k, v] of Object.entries(a.own || {})) { const o = b.own && b.own[k]; m.own[k] = o ? { lv: Math.max(v.lv || 1, o.lv || 1), m: Math.max(v.m || 0, o.m || 0) } : v; }
-  const byId = (x, y) => { const seen = new Set(x.map((i) => i.id)); return x.concat((y || []).filter((i) => !seen.has(i.id))); };
-  m.goals = byId(a.goals || [], b.goals);
-  m.pulls = byId(a.pulls || [], b.pulls).sort((p, q) => (parseInt(String(p.id).slice(1, 9), 36) || 0) - (parseInt(String(q.id).slice(1, 9), 36) || 0));
-  for (const k of ['lessons', 'seen', 'tabs', 'beats', 'badges']) m[k] = Object.assign({}, b[k] || {}, a[k] || {});
-  m.quiz = { best: Math.max(a.quiz.best, b.quiz.best), plays: Math.max(a.quiz.plays, b.quiz.plays), last: Math.max(a.quiz.last, b.quiz.last) };
-  m.streak = (b.streak && b.streak.last > (a.streak || {}).last) ? b.streak : a.streak;
-  m.squad = (a.squad || [null, null, null]).map((x, i) => x || (b.squad || [])[i] || null);
-  if (!a.user.done && b.user.done) m.user = b.user;
-  return m;
-}
-const accRef = () => ACC.db.collection('users').doc(ACC.user.uid);
-async function accPush() { const ts = Date.now(); await accRef().set({ json: backupText(), ts, v: 1 }); setSyn({ uid: ACC.user.uid, base: ts, rev: ts }); ACC.at = ts; }
-function accApply(data, ts) {
-  ACC.applying = true; S = data; save(); ACC.applying = false; setSyn({ uid: ACC.user.uid, base: ts, rev: ts }); ACC.at = ts;
-  applyOpts(); stack.splice(0).forEach((s) => s.el.remove()); startApp(false); setTimeout(() => toast('Дані завантажено з хмари', 'check'), 600);
-}
-function accSchedule() { clearTimeout(ACC.timer); ACC.timer = setTimeout(() => { if (ACC.user && !ACC.busy) accSync(); }, 3000); }
-async function accSync(manual) {
-  if (!ACC.user || ACC.busy || !ACC.db) return; ACC.busy = true; ACC.status = 'sync'; ACC.err = ''; accDraw();
-  try {
-    const snap = await accRef().get(), sy = syn(), same = sy.uid === ACC.user.uid, base = same ? (sy.base || 0) : 0, rev = sy.rev || 0;
-    if (!snap.exists) { await accPush(); }
-    else {
-      const cd = snap.data(), cloud = parseBackup(cd.json || '');
-      if (cloud.err) await accPush();
-      else {
-        const cloudNew = (cd.ts || 0) > base, localNew = rev > base;
-        if (!cloudNew && !localNew) { ACC.at = cd.ts || ACC.at; }
-        else if (!cloudNew) await accPush();
-        else if (isFresh(S) || !localNew) accApply(cloud.data, cd.ts || Date.now());
-        else { accConflict(cloud.data, cd.ts || 0); }
-      }
-    }
-    ACC.status = 'ok'; ACC.last = Date.now(); if (manual) toast('Синхронізовано', 'check');
-  } catch (e) { ACC.status = 'err'; ACC.err = accErr(e); if (manual && ACC.err) toast(ACC.err, 'info'); }
-  ACC.busy = false; accDraw();
-}
-function accConflict(cloud, ts) {
-  const fmt = (t) => { const d = new Date(t); return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')} о ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; };
-  const pl = (n, a, b, c) => n + ' ' + (n % 10 === 1 && n % 100 !== 11 ? a : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? b : c);
-  const info = (d) => `${pl(Object.keys(d.own || {}).length, 'агент', 'агенти', 'агентів')} · ${pl((d.goals || []).length, 'ціль', 'цілі', 'цілей')} · ${pl((d.pulls || []).length, 'крутка', 'крутки', 'круток')}`;
-  const sh = openSheet(`<div class="eyebrow">Синхронізація</div><h3 class="h-disp h2" style="margin:12px 0 6px">Дані відрізняються</h3>
-    <p class="muted" style="margin:0 0 14px;font-size:14px;line-height:1.5">У хмарі та на цьому пристрої є різні зміни. Оберіть, що зберегти.</p>
-    <div class="cmp"><div><small>Хмара${ts ? ' · ' + fmt(ts) : ''}</small><b>${info(cloud)}</b></div><div><small>Цей пристрій</small><b>${info(S)}</b></div></div>
-    <div style="display:grid;gap:10px;margin-top:16px"><button class="btn block" id="cm">Обʼєднати (рекомендовано)</button><button class="btn block ghost" id="cc">Взяти з хмари</button><button class="btn block ghost" id="cl">Залишити з цього пристрою</button></div>
-    <p class="muted" style="margin:12px 0 0;font-size:12.5px;line-height:1.5">Обʼєднання додає цілі, крутки й агентів з обох сторін і бере вищі рівні. Видалене в одному місці може повернутися.</p>`);
-  const done = async (fn) => { closeSheet(); ACC.busy = true; accDraw(); try { await fn(); ACC.status = 'ok'; } catch (e) { ACC.status = 'err'; ACC.err = accErr(e); } ACC.busy = false; accDraw(); };
-  $('#cm', sh).onclick = () => done(async () => { ACC.applying = true; S = mergeState(S, cloud); save(); ACC.applying = false; await accPush(); startApp(false); stack.splice(0, stack.length - 1).forEach((s) => s.el.remove()); toast('Дані обʼєднано', 'check'); });
-  $('#cc', sh).onclick = () => { closeSheet(); accApply(cloud, ts || Date.now()); };
-  $('#cl', sh).onclick = () => done(() => accPush().then(() => toast('Хмару оновлено', 'check')));
-}
-function accDelete() {
-  const sh = openSheet(`<div class="eyebrow">Акаунт</div><h3 class="h-disp h2" style="margin:12px 0 6px">Видалити дані з хмари?</h3><p class="muted" style="margin:0 0 16px;font-size:14px;line-height:1.5">Копія прогресу в хмарі буде стерта. Дані на цьому пристрої залишаться. Синхронізацію можна ввімкнути знову.</p>
-    <div style="display:grid;gap:10px"><button class="btn block" id="dx" style="background:var(--bad);border-color:var(--bad);color:#10130A">Видалити з хмари</button><button class="btn block ghost" id="dn">Скасувати</button></div>`);
-  $('#dn', sh).onclick = () => closeSheet();
-  $('#dx', sh).onclick = async () => { closeSheet(); try { await accRef().delete(); setSyn({ base: 0 }); toast('Хмарну копію видалено', 'check'); } catch (e) { toast(accErr(e) || 'Не вдалося видалити', 'info'); } accDraw(); };
-}
-
-/* --- інтерфейс --- */
-function accCard() {
-  if (!accOn()) return '';
-  const u = ACC.user, hm = (t) => { const d = new Date(t); return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; };
-  if (!u) return `<div class="card acct"><div class="row" style="gap:12px;align-items:center"><span class="mic">${ico('user')}</span><div style="min-width:0"><b class="gnm">Акаунт Google</b><small class="muted" style="display:block;font-size:13px;line-height:1.4">Зберігай прогрес у хмарі й відкривай його на будь-якому пристрої.</small></div></div>
-    <button class="gbtn" id="gin">${G_LOGO}<span>Увійти через Google</span></button>${ACC.err ? `<div class="err" role="alert">${esc(ACC.err)}</div>` : ''}</div>`;
-  const st = ACC.status === 'sync' ? '<i class="dot sy"></i>Синхронізація…' : ACC.status === 'err' ? '<i class="dot er"></i>Не синхронізовано' : `<i class="dot ok"></i>Синхронізовано${ACC.at ? ' о ' + hm(ACC.at) : ''}`;
-  return `<div class="card acct"><div class="row" style="gap:12px;align-items:center">${u.photoURL ? `<img class="gav" src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'gav ph',textContent:'${esc((u.displayName || 'P')[0])}'}))">` : `<span class="gav ph">${esc((u.displayName || 'P')[0])}</span>`}<div style="min-width:0"><b class="gnm">${esc(u.displayName || 'Проксі')}</b><small class="muted" style="display:block;font-size:13px;overflow:hidden;text-overflow:ellipsis">${esc(u.email || '')}</small></div></div>
-    <div class="accs" role="status">${st}</div>${ACC.err ? `<div class="err" role="alert">${esc(ACC.err)}</div>` : ''}
-    <div class="row2"><button class="btn ghost" id="gsy" aria-label="Синхронізувати зараз" ${ACC.busy ? 'disabled' : ''}>${ico('reset')}Оновити</button><button class="btn ghost" id="gout">Вийти</button></div><button class="lnk" id="gdel">Видалити дані з хмари</button></div>`;
-}
-function accDraw() {
-  ACC.hosts.forEach((h) => {
-    if (h.isConnected) h._seen = 1; else if (h._seen) { ACC.hosts.delete(h); return; }
-    h.innerHTML = accCard(); const g = (id) => $(id, h);
-    g('#gin') && (g('#gin').onclick = () => { sfx.tap(); accSignIn(); });
-    g('#gsy') && (g('#gsy').onclick = () => { sfx.tap(); accSync(true); });
-    g('#gout') && (g('#gout').onclick = () => accSignOut());
-    g('#gdel') && (g('#gdel').onclick = () => accDelete());
-  });
-}
-const accMount = (h) => { if (!h) return; ACC.hosts.add(h); accDraw(); };
-
 /* ===== SCREENS C: squad, profile, search ===== */
 function evalSquad(ids) {
   const as = ids.filter(Boolean).map(agent);
@@ -2512,7 +2283,6 @@ SCREENS.profile = {
     el.innerHTML = `<div class="topbar"><div class="ttl"><div class="eyebrow">Інтер-Нот · ID</div><div class="h-disp" style="margin-top:6px">Профіль</div></div></div>
     <div class="prof-head rise"><div class="avatar" style="background:${fav.c}">${mascot(70).replace('#1D2027', '#10130A').replace(/#DFFF2E/g, fav.c === '#DFFF2E' ? '#fff' : '#F1EEE3')}</div><div class="xp"><div class="h-disp h2" style="font-size:30px">${esc(S.user.name || 'Проксі')}</div><div class="mono muted" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">${esc(rankOf())} · рівень ${lv}</div><div class="meter"><i data-w="${xpIn}%"></i></div><div class="mono muted" style="font-size:11px">${xpIn}/100 XP</div></div></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 20px" class="rise" >${[[Object.keys(S.seen).length, 'досьє'], [doneCount(), 'уроків'], [S.quiz.best, 'рекорд'], [S.streak.n || 1, 'днів']].map((s) => `<div class="card" style="padding:12px 4px;text-align:center"><div style="font:700 26px var(--f-display)" data-count="${s[0]}">0</div><div class="mono muted" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">${s[1]}</div></div>`).join('')}</div>
-    <div class="mypad" id="acc" style="padding-top:16px"></div>
     <div class="sec-h"><div class="h-disp">Досягнення</div><span class="mono muted" style="font-size:12px">${Object.keys(S.badges).length}/${BADGES.length}</span></div>
     <div class="badges">${BADGES.map((b) => `<button class="badge ${S.badges[b.id] ? '' : 'lock'}" data-b="${b.id}"><span class="bi">${S.badges[b.id] ? ico(b.i) : ico('lock')}</span>${esc(b.n)}</button>`).join('')}</div>
     <div class="sec-h"><div class="h-disp">Улюблені</div></div>
@@ -2522,7 +2292,6 @@ SCREENS.profile = {
     <div style="padding:20px 20px 0;display:grid;gap:10px"><button class="btn block ghost" id="ab">${ico('info')}Про проєкт і джерела</button><button class="btn block ghost" id="rs">${ico('reset')}Скинути прогрес</button></div>
     <div class="disc">Досьє Ерідо · навчальний фанатський прототип для курсу UI/UX, УКД. Не є продуктом HoYoverse.</div>`;
     reveals(el); bindAgentCards(el);
-    accMount($('#acc', el));
     on(el, 'click', '.sw', (e, s) => { const k = s.dataset.o; S.opts[k] = !S.opts[k]; s.classList.toggle('on', S.opts[k]); s.setAttribute('aria-checked', !!S.opts[k]); save(); applyOpts(); sfx.tap(); vib(10); });
     on(el, 'click', '.badge', (e, b) => { const bd = BADGES.find((x) => x.id === b.dataset.b); toast(S.badges[bd.id] ? `${bd.n}: отримано` : `${bd.n}: ${bd.d}`, S.badges[bd.id] ? 'trophy' : 'lock'); sfx.tap(); });
     $('#ab', el).onclick = () => {
@@ -2644,11 +2413,11 @@ function init() {
   const root = document.documentElement;
   if (STATIC) root.classList.add('static');
   if (/[?&]phone\b/.test(location.search) || location.hash === '#wire') root.classList.add('mock');
-  buildShell(); buildRails(); applyOpts(); boot(); if (!STATIC) accInit();
+  buildShell(); buildRails(); applyOpts(); boot();
   if (location.hash === '#wire') document.body.classList.add('wire');
 }
 init();
-window.__app = { go, back, S: () => S, openAgent, openSearch, openFaction, openTerm, SCREENS, stack, AG, D, startApp, openSheet, closeSheet, confetti, ACC, accDraw };
+window.__app = { go, back, S: () => S, openAgent, openSearch, openFaction, openTerm, SCREENS, stack, AG, D, startApp, openSheet, closeSheet, confetti };
 
 })();
 </script>
