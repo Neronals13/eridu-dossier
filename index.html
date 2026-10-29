@@ -511,6 +511,20 @@ body{overflow:auto;background:var(--ink)}
 .tag.soon{background:#2A2E38;color:#F0B73C;border-color:#F0B73C55}
 .hasp svg .fig{display:none}
 .hasp svg .dec{display:none}
+
+/* ---- PWA / iPhone safe areas ---- */
+@media (max-width:499px),(max-height:699px){
+  .stage{position:fixed;inset:0;height:auto;min-height:0}
+  .device{width:100%;height:100%}
+  .view{padding-top:env(safe-area-inset-top,0px)}
+  .view[data-screen=agent],.view[data-screen=article]{padding-top:0}
+  .dhero .tools{top:max(44px,calc(env(safe-area-inset-top,0px) + 10px))}
+  .art-hero{padding-top:calc(84px + env(safe-area-inset-top,0px))}
+  .device::after{content:"";position:absolute;left:0;right:0;top:0;height:env(safe-area-inset-top,0px);z-index:70;pointer-events:none;background:linear-gradient(var(--ink) 55%,transparent)}
+  .tabbar{bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .view.has-tabs{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .view.has-cta .cta-bar{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 </head><body><div class="stage" id="stage">
 <aside class="rail" id="railL"></aside>
