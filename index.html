@@ -1,4 +1,4 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0C0D10"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ерідо"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><title>Досьє Ерідо</title>
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0C0D10"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ерідо"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><script>(function(){var d=document.documentElement;function f(){try{if(navigator.standalone){var a=Math.max(screen.width,screen.height),b=Math.min(screen.width,screen.height);d.style.setProperty('--sh',(innerWidth<innerHeight?a:b)+'px');d.classList.add('ios-sa')}}catch(e){}}f();addEventListener('resize',f);addEventListener('orientationchange',f)})()</script><title>Досьє Ерідо</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap">
 <style>/* Concept: pocket dossier from a retro-futurist TV city. Black glass, acid-yellow stamps, hazard tape, halftone, chamfered tags. One bold move: the CRT power-on + glitch titles. */
 :root{
@@ -524,6 +524,11 @@ body{overflow:auto;background:var(--ink)}
   .tabbar{bottom:calc(12px + env(safe-area-inset-bottom,0px))}
   .view.has-tabs{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   .view.has-cta .cta-bar{padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+}
+
+/* iOS standalone: layout viewport reports shorter than the screen -> use the real screen height */
+@media (max-width:499px),(max-height:699px){
+  .ios-sa .stage{height:var(--sh,100%);bottom:auto}
 }
 </style>
 </head><body><div class="stage" id="stage">
